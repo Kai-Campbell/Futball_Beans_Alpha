@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cipx54grpgvxp"
+path="res://.godot/imported/School.3.map-a27934ed36541c4d052ce0b798889d76.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/autosave/School.3.map"
+dest_files=["res://.godot/imported/School.3.map-a27934ed36541c4d052ce0b798889d76.tres"]
+
+[params]
+

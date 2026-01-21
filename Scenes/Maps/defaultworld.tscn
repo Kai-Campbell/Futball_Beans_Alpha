@@ -1,0 +1,391 @@
+[gd_scene load_steps=20 format=3 uid="uid://drkyxarv8nv4w"]
+
+[ext_resource type="Texture2D" uid="uid://bta54h737t4s8" path="res://Assets/Images/green-texture-closeup.jpg" id="1_e5wal"]
+[ext_resource type="PackedScene" uid="uid://3vkky0gkhxqb" path="res://Scenes/Essentials/player.tscn" id="2_02wbb"]
+[ext_resource type="PackedScene" uid="uid://bhuuqfvk2vm1d" path="res://Scenes/Essentials/Goal.tscn" id="3_6cfrh"]
+[ext_resource type="PackedScene" uid="uid://7qqsbj532e" path="res://Scenes/Essentials/goal_h.tscn" id="4_0dyby"]
+[ext_resource type="PackedScene" uid="uid://bv7h4fios87pf" path="res://Scenes/Essentials/ball.tscn" id="5_tmrml"]
+[ext_resource type="Script" uid="uid://drrgchde0o7fv" path="res://Scripts/Misc/DeathZone.gd" id="6_ro6g3"]
+[ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="7_30w6n"]
+[ext_resource type="Script" uid="uid://ducwsp2cp0oau" path="res://Scripts/GlobalScripts/HomeScore.gd" id="8_5h637"]
+[ext_resource type="Script" uid="uid://b57c7r6mm7ygs" path="res://Scripts/GlobalScripts/AwayScore.gd" id="9_mou16"]
+[ext_resource type="Script" uid="uid://dusl25e1560vc" path="res://Scripts/GlobalScripts/Timer.gd" id="10_kmfaf"]
+[ext_resource type="PackedScene" uid="uid://8cfg60sv56vi" path="res://Scenes/Menus/pause_menu.tscn" id="11_02wbb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_fj7yv"]
+sky_top_color = Color(0.186859, 0.452268, 0.757143, 1)
+sky_horizon_color = Color(0.616785, 0.626601, 0.642099, 1)
+ground_horizon_color = Color(0.662243, 0.671743, 0.686743, 1)
+
+[sub_resource type="Sky" id="Sky_0fj1v"]
+sky_material = SubResource("ProceduralSkyMaterial_fj7yv")
+
+[sub_resource type="Environment" id="Environment_aqk2v"]
+background_mode = 2
+sky = SubResource("Sky_0fj1v")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_aqk2v"]
+albedo_color = Color(0.791999, 0.791999, 0.791999, 1)
+albedo_texture = ExtResource("1_e5wal")
+uv1_triplanar = true
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_036b0"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_dwbse"]
+albedo_texture = ExtResource("1_e5wal")
+uv1_triplanar = true
+uv1_world_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ioo17"]
+size = Vector3(15.0864, 14.8154, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_wse8f"]
+size = Vector3(13.1133, 15.373, 1)
+
+[node name="Test_World" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.66449, 0.331246, -1.2915)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, -0.40863, 13.4924, 0.277023)
+light_color = Color(1, 1, 0.760784, 1)
+shadow_enabled = true
+shadow_opacity = 0.65
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_aqk2v")
+
+[node name="Pitch" type="CSGBox3D" parent="."]
+use_collision = true
+size = Vector3(100, 0.05, 65)
+material = SubResource("StandardMaterial3D_aqk2v")
+
+[node name="Player" parent="." instance=ExtResource("2_02wbb")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0498397, 1.13115, 2.9826)
+
+[node name="EnemyGoal" parent="." instance=ExtResource("3_6cfrh")]
+transform = Transform3D(0.365, 0, 0, 0, 5.305, 0, 0, 0, 0.49, -50.1954, 0, -8.14283)
+
+[node name="HomeGoal" parent="." instance=ExtResource("4_0dyby")]
+transform = Transform3D(-0.365, 0, -4.28372e-08, 0, 5.305, 0, 3.19093e-08, 0, -0.49, 50.228, 0, 7.273)
+
+[node name="Ball" parent="." instance=ExtResource("5_tmrml")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.124238, 0.924101, 0.116193)
+
+[node name="DeathZ" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 24.7292, 0)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("6_ro6g3")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DeathZ"]
+transform = Transform3D(16.11, 0, 0, 0, 16.11, 0, 0, 0, 16.11, 0, -28.9503, 0)
+shape = SubResource("WorldBoundaryShape3D_036b0")
+
+[node name="Lines of Pitch" type="Node3D" parent="."]
+
+[node name="Middle_Line" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.172852, -0.233459, 0)
+size = Vector3(0.0625, 0.533081, 65)
+
+[node name="Middle_Circle" type="CSGTorus3D" parent="Lines of Pitch"]
+transform = Transform3D(7.01, 0, 0, 0, 7.01, 0, 0, 0, 7.01, 0, -0.11, 0)
+inner_radius = 0.95484
+sides = 18
+ring_sides = 9
+
+[node name="Side_Line" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115585, -0.233856, -32.4591)
+size = Vector3(99.9917, 0.532288, 0.0771484)
+
+[node name="Side_Line2" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00115585, -0.239212, 32.4591)
+size = Vector3(99.9917, 0.542999, 0.0844727)
+
+[node name="Home_Line" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.967, -0.234, 0.00519276)
+size = Vector3(0.0582886, 0.527344, 64.978)
+
+[node name="Enemy_Line" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.9651, -0.234, 0.00519276)
+size = Vector3(0.0582886, 0.527344, 64.978)
+
+[node name="Goal_Lines" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7127, -0.23703, 11.7492)
+size = Vector3(6.57263, 0.52594, 0.0985718)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.422)
+size = Vector3(6.57263, 0.52594, 0.0985718)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23683, -0.112741, -11.7068)
+size = Vector3(0.100525, 0.750854, 23.5001)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06295, 0.158508, 7.9493)
+size = Vector3(20.6738, 0.223999, 0.109131)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0651, 0.158504, -31.599)
+size = Vector3(20.6738, 0.223999, 0.109131)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.3848, 0.158504, -11.8257)
+size = Vector3(39.6513, 0.223999, 0.109131)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(6.26996, -0.0218864, 0, 0.0218864, 6.26996, 0, 0, 0, 6.27, 14.785, -0.005041, -11.6803)
+inner_radius = 0.91659
+sides = 13
+ring_sides = 9
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52647, -0.169931, -11.9082)
+
+[node name="Goal_Lines2" type="CSGBox3D" parent="Lines of Pitch"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 46.6848, -0.23703, -12.3212)
+size = Vector3(6.57263, 0.52594, 0.0985718)
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.422)
+size = Vector3(6.57263, 0.52594, 0.0985718)
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23683, -0.112741, -11.7068)
+size = Vector3(0.100525, 0.750854, 23.5001)
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06295, 0.158508, 7.9493)
+size = Vector3(20.6738, 0.223999, 0.109131)
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0651, 0.158504, -31.599)
+size = Vector3(20.6738, 0.223999, 0.109131)
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.3848, 0.158504, -11.8257)
+size = Vector3(39.6513, 0.223999, 0.109131)
+
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(6.26996, -0.0218864, 0, 0.0218864, 6.26996, 0, 0, 0, 6.27, 14.785, -0.005041, -11.6803)
+inner_radius = 0.91659
+sides = 13
+ring_sides = 9
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52647, -0.169931, -11.9082)
+
+[node name="Outside_Pitch" type="CSGBox3D" parent="."]
+transform = Transform3D(130, 0, 0, 0, 1, 0, 0, 0, 80, -1.051, -0.01, 0)
+use_collision = true
+size = Vector3(1, 0.0395203, 1)
+material = SubResource("StandardMaterial3D_dwbse")
+
+[node name="OutofPlayAreasRight" type="Node3D" parent="."]
+
+[node name="Area3D" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D2" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2419, 2.38419e-07, -32.9033)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D3" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4071, 2.38419e-07, -32.9033)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D4" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4499, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D5" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.8564, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D6" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2115, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D7" type="Area3D" parent="OutofPlayAreasRight"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5947, 0, -33.5343)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasRight/Area3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01229, 7.18649, 0.176811)
+shape = SubResource("BoxShape3D_wse8f")
+
+[node name="OutofPlayAreasLeft" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 66.8943)
+
+[node name="Area3D" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D2" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.2419, 2.38419e-07, -32.9033)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D3" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.4071, 2.38419e-07, -32.9033)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D4" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4499, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D5" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -30.8564, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D5"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D6" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.2115, 0, -32.8943)
+collision_layer = 3
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D6"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.04671, 7.41901, -0.455624)
+shape = SubResource("BoxShape3D_ioo17")
+
+[node name="Area3D7" type="Area3D" parent="OutofPlayAreasLeft"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 44.5947, 0, -33.5343)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="OutofPlayAreasLeft/Area3D7"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.01229, 7.18649, 0.176811)
+shape = SubResource("BoxShape3D_wse8f")
+
+[node name="RightScoreBoard" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 28.2958, 34.2894)
+
+[node name="ScoreR Home" type="Label3D" parent="RightScoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, 4.92604, -0.794178, -1.20212)
+pixel_size = 0.1
+text = "0"
+font = ExtResource("7_30w6n")
+font_size = 70
+script = ExtResource("8_5h637")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="RightScoreBoard"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0.00728416, 0, 0.0674324)
+size = Vector3(25, 15, 1)
+
+[node name="ScoreR Label" type="Label3D" parent="RightScoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, 0, 3.26948, -1.33008)
+pixel_size = 0.1
+text = "Score
+H                       A"
+font = ExtResource("7_30w6n")
+
+[node name="ScoreR Away" type="Label3D" parent="RightScoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, -5.12208, -0.825123, -1.20212)
+pixel_size = 0.1
+text = "0"
+font = ExtResource("7_30w6n")
+font_size = 70
+script = ExtResource("9_mou16")
+
+[node name="Time" type="Node3D" parent="RightScoreBoard"]
+
+[node name="TimeR" type="Label3D" parent="RightScoreBoard/Time"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, 0, -5.45635, -0.913357)
+pixel_size = 0.1
+font = ExtResource("7_30w6n")
+script = ExtResource("10_kmfaf")
+
+[node name="Timer" type="Timer" parent="RightScoreBoard/Time"]
+wait_time = 300.0
+
+[node name="LeftSCoreBoard" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 28.2958, -35.2317)
+
+[node name="ScoreL Home" type="Label3D" parent="LeftSCoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, 4.92604, -0.794178, -0.624199)
+pixel_size = 0.1
+text = "0"
+font = ExtResource("7_30w6n")
+font_size = 70
+script = ExtResource("8_5h637")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="LeftSCoreBoard"]
+transform = Transform3D(1, 0, 0, 0, 0.984808, 0.173648, 0, -0.173648, 0.984808, 0.00728416, 0, 0.0674324)
+size = Vector3(25, 15, 1)
+
+[node name="ScoreL Label" type="Label3D" parent="LeftSCoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, 0, 3.26948, -1.37753)
+pixel_size = 0.1
+text = "Score
+H                       A"
+font = ExtResource("7_30w6n")
+
+[node name="ScoreL Away" type="Label3D" parent="LeftSCoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, -5.12208, -0.825123, -0.630322)
+pixel_size = 0.1
+text = "0"
+font = ExtResource("7_30w6n")
+font_size = 70
+script = ExtResource("9_mou16")
+
+[node name="TimeL" type="Label3D" parent="LeftSCoreBoard"]
+transform = Transform3D(-1, -2.26267e-08, -8.44439e-08, 0, 0.965926, -0.258819, 8.74228e-08, -0.258819, -0.965926, 0, -4.68789, -1.52153)
+pixel_size = 0.1
+font = ExtResource("7_30w6n")
+
+[node name="PauseMenu" parent="." instance=ExtResource("11_02wbb")]
+
+[connection signal="body_entered" from="DeathZ" to="Ball" method="_on_death_z_body_entered"]

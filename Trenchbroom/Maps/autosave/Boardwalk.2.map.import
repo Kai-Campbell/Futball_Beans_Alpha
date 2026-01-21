@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://2ya6ui24upca"
+path="res://.godot/imported/Boardwalk.2.map-6e8c2f10820a7e7029baa6771cabb67c.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/autosave/Boardwalk.2.map"
+dest_files=["res://.godot/imported/Boardwalk.2.map-6e8c2f10820a7e7029baa6771cabb67c.tres"]
+
+[params]
+

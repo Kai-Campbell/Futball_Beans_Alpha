@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bnx8gjfjhfwuq"]
+
+[ext_resource type="Texture2D" uid="uid://c30kdnfv6s28g" path="res://Assets/barbackground.png" id="1_e8ovk"]
+[ext_resource type="Texture2D" uid="uid://chb3yvf1xiu13" path="res://Assets/tacklebar.png" id="2_7s6fp"]
+
+[node name="TackleBar" type="Node2D"]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+fill_mode = 3
+texture_under = ExtResource("1_e8ovk")
+texture_progress = ExtResource("2_7s6fp")
+metadata/_edit_use_anchors_ = true

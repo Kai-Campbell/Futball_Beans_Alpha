@@ -1,0 +1,93 @@
+[gd_scene load_steps=9 format=3 uid="uid://crncnmiyjs813"]
+
+[ext_resource type="Script" uid="uid://by4hv010i2bnw" path="res://Scripts/Misc/crowd_cheer_small_script.gd" id="1_6a40m"]
+[ext_resource type="Texture2D" uid="uid://dma2wa85ppehr" path="res://Assets/Animations/3dcrowd.png" id="1_eefoh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6a40m"]
+atlas = ExtResource("1_eefoh")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6phq1"]
+atlas = ExtResource("1_eefoh")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v8vk7"]
+atlas = ExtResource("1_eefoh")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_conuq"]
+atlas = ExtResource("1_eefoh")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p1m13"]
+atlas = ExtResource("1_eefoh")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xchrt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6a40m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6phq1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v8vk7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_conuq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p1m13")
+}],
+"loop": true,
+"name": &"CrowdCheer",
+"speed": 5.0
+}]
+
+[node name="Crowd" type="Node3D"]
+script = ExtResource("1_6a40m")
+
+[node name="AnimatedSprite3D5" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.35169, 1.47181, 0.0296302)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_xchrt")
+animation = &"CrowdCheer"
+autoplay = "CrowdCheer"
+frame_progress = 0.727693
+
+[node name="AnimatedSprite3D4" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.12169, 1.48994, 0.0197535)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_xchrt")
+animation = &"CrowdCheer"
+autoplay = "CrowdCheer"
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000535011, 1.8257, 0.00987673)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_xchrt")
+animation = &"CrowdCheer"
+autoplay = "CrowdCheer"
+frame_progress = 0.796663
+
+[node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.80163, 1.8257, 0.00987673)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_xchrt")
+animation = &"CrowdCheer"
+autoplay = "CrowdCheer"
+
+[node name="AnimatedSprite3D3" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.108, 1.8257, 0.00987673)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_xchrt")
+animation = &"CrowdCheer"
+autoplay = "CrowdCheer"
+
+[node name="CheerTimer" type="Timer" parent="."]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="timeout" from="CheerTimer" to="." method="_on_cheer_timer_timeout"]

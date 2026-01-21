@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://cqfyq6nla55ax"
+path="res://.godot/imported/SmallStadium.2.map-70ae0b120240642511f448c81699a78f.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/autosave/SmallStadium.2.map"
+dest_files=["res://.godot/imported/SmallStadium.2.map-70ae0b120240642511f448c81699a78f.tres"]
+
+[params]
+

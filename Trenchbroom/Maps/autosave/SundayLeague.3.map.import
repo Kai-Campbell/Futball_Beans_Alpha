@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://c2na7d1rgh78p"
+path="res://.godot/imported/SundayLeague.3.map-2ac28d116ff107df01d08a115a745781.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/autosave/SundayLeague.3.map"
+dest_files=["res://.godot/imported/SundayLeague.3.map-2ac28d116ff107df01d08a115a745781.tres"]
+
+[params]
+

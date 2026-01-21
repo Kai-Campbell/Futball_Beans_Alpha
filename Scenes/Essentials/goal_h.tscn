@@ -1,0 +1,38 @@
+[gd_scene load_steps=3 format=3 uid="uid://7qqsbj532e"]
+
+[ext_resource type="Script" uid="uid://dtdhulxvlevc7" path="res://Scripts/Essentials/EnemyArea3D.gd" id="1_ygofp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f3sb7"]
+size = Vector3(0.61084, 1.01965, 34.6164)
+
+[node name="GoalH" type="Node3D" groups=["EnemyGoal"]]
+transform = Transform3D(0.365, 0, 0, 0, 5.305, 0, 0, 0, 0.49, 0, 0, 0)
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -1.63566)
+use_collision = true
+
+[node name="CSGCylinder3D2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 33.0006)
+use_collision = true
+
+[node name="CSGCylinder3D3" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.9893, 0, -1.63566)
+use_collision = true
+
+[node name="CSGCylinder3D4" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.4326, 0, 32.9206)
+use_collision = true
+
+[node name="DetectBall(GoalArea)" type="Area3D" parent="." groups=["HomeGoal"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.67293, 0, 0)
+collision_layer = 3
+collision_mask = 2
+script = ExtResource("1_ygofp")
+home = true
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="DetectBall(GoalArea)"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.742584, 0.491761, 15.6346)
+shape = SubResource("BoxShape3D_f3sb7")
+
+[connection signal="body_entered" from="DetectBall(GoalArea)" to="DetectBall(GoalArea)" method="_on_body_entered"]

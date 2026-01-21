@@ -1,0 +1,97 @@
+[gd_scene load_steps=14 format=3 uid="uid://2af8f4c47kvm"]
+
+[ext_resource type="Material" uid="uid://hkwdvumg5gsg" path="res://Trenchbroom/Textures/256x256/Metal/Metal_05-256x256.tres" id="1_f8vjj"]
+[ext_resource type="Script" uid="uid://b2l8v4ua7a2g5" path="res://Scripts/Essentials/opposing_team.gd" id="1_nphkm"]
+[ext_resource type="Texture2D" uid="uid://dx5b0sb815gok" path="res://Assets/Player Customizations/Skins/Skin1.png" id="2_nphkm"]
+[ext_resource type="Script" uid="uid://c78m4tavwrco7" path="res://Scripts/Essentials/enemyFootShapeCase.gd" id="4_hbejr"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xjp4x"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_1ycsr"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hbejr"]
+albedo_texture = ExtResource("2_nphkm")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_hbejr"]
+material = SubResource("StandardMaterial3D_hbejr")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_ekctc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_18wio"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_cirlt"]
+radial_segments = 40
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ajh21"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_nphkm"]
+
+[node name="OpposingTeam" type="CharacterBody3D" groups=["OpposingTeam"]]
+collision_layer = 33
+script = ExtResource("1_nphkm")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_xjp4x")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+layers = 33
+mesh = SubResource("CapsuleMesh_1ycsr")
+
+[node name="Helmet" type="CSGSphere3D" parent="."]
+transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0.612118, 0)
+layers = 16
+operation = 2
+radial_segments = 14
+rings = 8
+material = ExtResource("1_f8vjj")
+
+[node name="CSGBox3D" type="CSGBox3D" parent="Helmet"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.385967, 0)
+layers = 16
+operation = 2
+
+[node name="Skin" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_hbejr")
+
+[node name="Shirt" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.01, 0, 0, 0, 0.35, 0, 0, 0, 1.01, 0, 0.095, 0)
+layers = 16
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_ekctc")
+surface_material_override/0 = SubResource("StandardMaterial3D_18wio")
+
+[node name="Pants" type="CSGMesh3D" parent="."]
+transform = Transform3D(1.01, 0, 0, 0, 0.84, 0, 0, 0, 1.01, 0, -0.180421, 0)
+layers = 16
+operation = 2
+mesh = SubResource("CapsuleMesh_cirlt")
+material = SubResource("StandardMaterial3D_ajh21")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pants"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911767, 0)
+operation = 2
+radius = 0.565918
+
+[node name="Feet" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.87, 0)
+
+[node name="EnemyShapeCast" type="ShapeCast3D" parent="Feet"]
+transform = Transform3D(2.3, 0, 0, 0, -1.00536e-07, -1, 0, 2.3, -4.37114e-08, 0, 0.491, 0.0282837)
+shape = SubResource("SphereShape3D_nphkm")
+target_position = Vector3(0, 0, 0)
+collision_mask = 4
+script = ExtResource("4_hbejr")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="Feet"]
+target_desired_distance = 1.5
+avoidance_enabled = true
+debug_enabled = true
+
+[node name="KickTimer" type="Timer" parent="."]
+wait_time = 0.2
+one_shot = true
+
+[connection signal="target_reached" from="Feet/NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="timeout" from="KickTimer" to="Feet/EnemyShapeCast" method="_on_kick_timer_timeout"]

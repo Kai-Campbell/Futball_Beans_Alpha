@@ -1,0 +1,190 @@
+[gd_scene load_steps=12 format=3 uid="uid://b8li4lgl3ltcp"]
+
+[ext_resource type="Script" uid="uid://4okgq7nnx1qv" path="res://Scripts/Menus/quick_game_selection.gd" id="1_kyrlg"]
+[ext_resource type="Texture2D" uid="uid://75wbeyof0g7x" path="res://Assets/Images/Screenshot 2026-01-01 233928.png" id="2_v6e7l"]
+[ext_resource type="Texture2D" uid="uid://cf2jnd565mm8i" path="res://Assets/Images/Screenshot 2026-01-01 233953.png" id="4_3737l"]
+[ext_resource type="Texture2D" uid="uid://40fjjx0widgi" path="res://icon.svg" id="4_c6r1l"]
+[ext_resource type="Texture2D" uid="uid://bta54h737t4s8" path="res://Assets/Images/green-texture-closeup.jpg" id="5_g5opu"]
+[ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="5_sbh8r"]
+[ext_resource type="Script" uid="uid://bx34qofje8dgs" path="res://Scripts/Menus/Controls4Menus/level_select_quick_game.gd" id="6_g5opu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_g5opu"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v6e7l"]
+bg_color = Color(0.633757, 0.633757, 0.633757, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(4.635, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3737l"]
+bg_color = Color(0.423529, 0.870588, 0.423529, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(4.635, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wheqn"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+shadow_size = 5
+shadow_offset = Vector2(4.635, 0)
+
+[node name="QuickGame Selection" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kyrlg")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1154.0
+offset_bottom = 649.0
+
+[node name="Control" type="Control" parent="."]
+clip_contents = true
+custom_minimum_size = Vector2(420, 420)
+anchors_preset = 0
+offset_left = 600.0
+offset_top = 41.0
+offset_right = 1020.0
+offset_bottom = 461.0
+
+[node name="Map1" type="TextureRect" parent="Control"]
+z_index = 2
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 0
+offset_right = 1131.0
+offset_bottom = 626.0
+scale = Vector2(0.38, 0.675)
+texture = ExtResource("2_v6e7l")
+
+[node name="Map2" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 0
+texture = ExtResource("5_g5opu")
+
+[node name="Map3" type="TextureRect" parent="Control"]
+z_index = -2
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 0
+scale = Vector2(0.455, 0.935)
+texture = ExtResource("4_3737l")
+
+[node name="Map4" type="TextureRect" parent="Control"]
+z_index = 1
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 420.0
+texture = ExtResource("4_c6r1l")
+
+[node name="Map5" type="TextureRect" parent="Control"]
+z_index = 1
+custom_minimum_size = Vector2(420, 420)
+layout_mode = 0
+offset_right = 420.0
+offset_bottom = 420.0
+texture = ExtResource("4_c6r1l")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -423.5
+offset_top = -122.0
+offset_right = 423.5
+offset_bottom = -26.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 355
+
+[node name="Back" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_sbh8r")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g5opu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6e7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3737l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wheqn")
+text = "Back"
+
+[node name="Play" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("5_sbh8r")
+theme_override_font_sizes/font_size = 45
+theme_override_styles/focus = SubResource("StyleBoxEmpty_g5opu")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v6e7l")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3737l")
+theme_override_styles/normal = SubResource("StyleBoxFlat_wheqn")
+text = "Play Game"
+
+[node name="Level Select" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 272.0
+offset_right = 562.0
+offset_bottom = 352.0
+theme_override_font_sizes/font_size = 45
+alignment = 1
+selected = 0
+item_count = 5
+popup/item_0/text = "Stadium"
+popup/item_0/id = 1
+popup/item_1/text = "Sunday League"
+popup/item_1/id = 2
+popup/item_2/text = "Beach"
+popup/item_2/id = 3
+popup/item_3/text = "School Gym (Futsal)"
+popup/item_3/id = 4
+popup/item_4/text = "Hell"
+popup/item_4/id = 5
+script = ExtResource("6_g5opu")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 107.0
+offset_right = 522.0
+offset_bottom = 227.0
+theme_override_constants/shadow_offset_x = 10
+theme_override_constants/shadow_offset_y = 10
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("5_sbh8r")
+theme_override_font_sizes/font_size = 100
+text = "Map Select"
+
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/Play" to="Level Select" method="_on_play_pressed"]
+[connection signal="item_selected" from="Level Select" to="Level Select" method="_on_item_selected"]

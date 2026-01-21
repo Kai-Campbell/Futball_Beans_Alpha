@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://bwde5g3702vl"
+path="res://.godot/imported/School.1.map-24054537af5b4d8976b0bb8988ad6332.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/autosave/School.1.map"
+dest_files=["res://.godot/imported/School.1.map-24054537af5b4d8976b0bb8988ad6332.tres"]
+
+[params]
+

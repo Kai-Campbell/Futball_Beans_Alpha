@@ -1,0 +1,189 @@
+[gd_scene load_steps=10 format=3 uid="uid://cicrr7evaevsv"]
+
+[ext_resource type="Script" uid="uid://2r74euhj07sl" path="res://Scripts/Menus/main_menu_options.gd" id="1_2ad84"]
+[ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="1_r74br"]
+[ext_resource type="Script" uid="uid://ddbyqbiw77mvm" path="res://Scripts/Menus/Controls4Menus/Options_Music_Slider.gd" id="3_pyysr"]
+[ext_resource type="Script" uid="uid://bxpinffx0g4td" path="res://Scripts/Menus/Controls4Menus/Options_SFX_Slider.gd" id="4_pyysr"]
+[ext_resource type="Script" uid="uid://cmk3a8yd6lojd" path="res://Scripts/Menus/Controls4Menus/full_screen_button.gd" id="5_1ns78"]
+[ext_resource type="Script" uid="uid://lmqum76y5xyp" path="res://Scripts/Menus/Controls4Menus/ResolutionScaling.gd" id="6_d1fwo"]
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_1ns78"]
+color = Color(1, 1, 1, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_d1fwo"]
+color = Color(0, 0, 1, 1)
+thickness = 10
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_anss5"]
+color = Color(0, 0, 1, 1)
+thickness = 10
+
+[node name="MainMenuOptions" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ad84")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 0
+offset_right = 1166.0
+offset_bottom = 667.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -171.0
+offset_right = 171.0
+offset_bottom = 120.0
+grow_horizontal = 2
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("1_r74br")
+theme_override_font_sizes/font_size = 100
+text = "Settings"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 111.0
+offset_right = 676.0
+offset_bottom = 214.0
+theme_override_styles/slider = SubResource("StyleBoxLine_1ns78")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_d1fwo")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_anss5")
+max_value = 1.0
+step = 0.05
+value = 0.8
+script = ExtResource("3_pyysr")
+audio_bus_name = "Sound Effects"
+
+[node name="Music Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 109.0
+offset_right = 1046.0
+offset_bottom = 212.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_r74br")
+theme_override_font_sizes/font_size = 80
+text = "Music"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SFX Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 855.0
+offset_top = 208.0
+offset_right = 1046.0
+offset_bottom = 311.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_r74br")
+theme_override_font_sizes/font_size = 80
+text = "SFX"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HSlider2" type="HSlider" parent="."]
+layout_mode = 0
+offset_left = 45.0
+offset_top = 209.0
+offset_right = 676.0
+offset_bottom = 312.0
+theme_override_styles/slider = SubResource("StyleBoxLine_1ns78")
+theme_override_styles/grabber_area = SubResource("StyleBoxLine_d1fwo")
+theme_override_styles/grabber_area_highlight = SubResource("StyleBoxLine_anss5")
+max_value = 1.0
+step = 0.05
+value = 0.8
+script = ExtResource("4_pyysr")
+
+[node name="FullScreenButton" type="CheckButton" parent="."]
+layout_mode = 0
+offset_left = 177.0
+offset_top = 334.0
+offset_right = 221.0
+offset_bottom = 365.0
+scale = Vector2(1.785, 1.785)
+script = ExtResource("5_1ns78")
+
+[node name="FullScreeen" type="Label" parent="."]
+layout_mode = 0
+offset_left = 411.0
+offset_top = 304.0
+offset_right = 1055.0
+offset_bottom = 407.0
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_r74br")
+theme_override_font_sizes/font_size = 80
+text = "Full Screen Enabled"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Resolution" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -58.0
+offset_top = 86.0
+offset_right = 586.0
+offset_bottom = 189.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_r74br")
+theme_override_font_sizes/font_size = 50
+text = "Resolution Scaling"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -72.0
+offset_top = -92.0
+offset_right = 72.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/outline_size = 5
+theme_override_fonts/font = ExtResource("1_r74br")
+theme_override_font_sizes/font_size = 70
+text = "Back"
+
+[node name="ResolutionScaling" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 141.0
+offset_top = 435.0
+offset_right = 556.0
+offset_bottom = 498.0
+theme_override_font_sizes/font_size = 40
+selected = 0
+item_count = 4
+popup/item_0/text = "100% (Standard)"
+popup/item_0/id = 0
+popup/item_1/text = "75%"
+popup/item_1/id = 1
+popup/item_2/text = "50%"
+popup/item_2/id = 2
+popup/item_3/text = "Playing on a Dial Up"
+popup/item_3/id = 3
+script = ExtResource("6_d1fwo")
+
+[connection signal="value_changed" from="HSlider" to="HSlider" method="_on_value_changed"]
+[connection signal="value_changed" from="HSlider2" to="HSlider2" method="_on_value_changed"]
+[connection signal="toggled" from="FullScreenButton" to="FullScreenButton" method="_on_toggled"]
+[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="item_selected" from="ResolutionScaling" to="ResolutionScaling" method="_on_item_selected"]

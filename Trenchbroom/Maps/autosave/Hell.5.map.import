@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dbh2iwnsbyjyb"
+path="res://.godot/imported/Hell.5.map-817cbeb7d79794b48abaab70a5fadb89.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/autosave/Hell.5.map"
+dest_files=["res://.godot/imported/Hell.5.map-817cbeb7d79794b48abaab70a5fadb89.tres"]
+
+[params]
+

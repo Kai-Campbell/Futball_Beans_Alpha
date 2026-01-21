@@ -1,0 +1,14 @@
+[remap]
+
+importer="func_godot.map"
+type="Resource"
+uid="uid://dvidp1a35rhsw"
+path="res://.godot/imported/CharacterSelection.map-5c8777e2c749d49e294d69c031e5073c.tres"
+
+[deps]
+
+source_file="res://Trenchbroom/Maps/CharacterSelection.map"
+dest_files=["res://.godot/imported/CharacterSelection.map-5c8777e2c749d49e294d69c031e5073c.tres"]
+
+[params]
+

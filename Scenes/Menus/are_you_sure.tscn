@@ -1,0 +1,119 @@
+[gd_scene load_steps=9 format=3 uid="uid://dyo16fwdgohnx"]
+
+[ext_resource type="Script" uid="uid://nl3vcwbw4xph" path="res://Scripts/Menus/are_you_sure_exit_pt2.gd" id="1_0xbl7"]
+[ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="2_sxikm"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gvdk7"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fgj4s"]
+bg_color = Color(0.737255, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gvdk7"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fgj4s"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kbmni"]
+bg_color = Color(0, 0.623529, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hmr0p"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+
+[node name="AreYouSure" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0xbl7")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -500.5
+offset_top = 23.0
+offset_right = 500.5
+offset_bottom = 228.0
+grow_horizontal = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("2_sxikm")
+theme_override_font_sizes/font_size = 150
+text = "Are You Sure?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -433.0
+offset_top = -57.0
+offset_right = 433.0
+offset_bottom = 257.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 30
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sxikm")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_gvdk7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_fgj4s")
+theme_override_styles/hover = SubResource("StyleBoxFlat_fgj4s")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gvdk7")
+text = "Yes"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_sxikm")
+theme_override_font_sizes/font_size = 90
+theme_override_styles/focus = SubResource("StyleBoxEmpty_fgj4s")
+theme_override_styles/hover_pressed = SubResource("StyleBoxFlat_kbmni")
+theme_override_styles/hover = SubResource("StyleBoxFlat_kbmni")
+theme_override_styles/normal = SubResource("StyleBoxFlat_hmr0p")
+text = "No, I'm José Mobeano"
+
+[connection signal="pressed" from="VBoxContainer/Button" to="." method="_on_yes_exit_pressed"]
+[connection signal="pressed" from="VBoxContainer/Button2" to="." method="_on_button_dont_exit_pressed"]

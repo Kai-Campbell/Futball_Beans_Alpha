@@ -1,0 +1,263 @@
+[gd_scene load_steps=21 format=4 uid="uid://b3dpn2ivu82w1"]
+
+[ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="1_bn5u7"]
+[ext_resource type="Script" uid="uid://bxn6vuc8dq6hd" path="res://Scripts/Menus/character_custom.gd" id="1_lpkiu"]
+[ext_resource type="PackedScene" uid="uid://3vkky0gkhxqb" path="res://Scenes/Essentials/player.tscn" id="3_jodt1"]
+[ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="4_8rn45"]
+[ext_resource type="Texture2D" uid="uid://dx5b0sb815gok" path="res://Assets/Player Customizations/Skins/Skin1.png" id="4_xdwoa"]
+[ext_resource type="Resource" uid="uid://bkhxcqsquw1yg" path="res://addons/func_godot/func_godot_default_map_settings.tres" id="5_77quw"]
+[ext_resource type="Texture2D" uid="uid://bw4ptplg004tj" path="res://Assets/Player Customizations/Clothes/Shirts/RedStripes.png" id="5_xdwoa"]
+[ext_resource type="Texture2D" uid="uid://klee04q0kvl3" path="res://Assets/Player Customizations/Clothes/Pants/red.png" id="6_e0us1"]
+[ext_resource type="Material" uid="uid://dhjyvlnttoqal" path="res://Trenchbroom/Textures/256x2562/Grass/Grass_23-256x256.tres" id="6_iiaql"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_ptc0m"]
+albedo_texture = ExtResource("4_xdwoa")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_njvu8"]
+material = SubResource("StandardMaterial3D_ptc0m")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qlo73"]
+albedo_texture = ExtResource("5_xdwoa")
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_e0us1"]
+material = SubResource("StandardMaterial3D_qlo73")
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_qlo73"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdwoa"]
+albedo_texture = ExtResource("6_e0us1")
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_8rn45"]
+_surfaces = [{
+"aabb": AABB(-2.00012, -0.500122, -49, 25.5001, 1.00012, 56),
+"attribute_data": PackedByteArray("AAA8wAAAgL0AAoA+AACAvQACgD4ACIA9AAA8wAAIgD0AAGA/AAiAPQAAxMAACIA9AADEwAAAgL0AAGA/AACAvQAAYL8AAoA+AABgvwAAPMAAAMRAAAA8wAAAxEAAAoA+AABgPwACgD4AAMTAAAKAPgAAxMAAADzAAABgPwAAPMAAAGC/AACAvQAAxEAAAIC9AADEQAAIgD0AAGC/AAiAPQAAPEAACIA9AAKAvgAIgD0AAoC+AACAvQAAPEAAAIC9"),
+"format": 34359742487,
+"index_count": 36,
+"index_data": PackedByteArray("AAABAAIAAAACAAMABAAFAAYABAAGAAcACAAJAAoACAAKAAsADAANAA4ADAAOAA8AEAARABIAEAASABMAFAAVABYAFAAWABcA"),
+"material": ExtResource("6_iiaql"),
+"name": "256x2562/Grass/Grass_23-256x256",
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 24,
+"vertex_data": PackedByteArray("AAC8QQAAAD8AAETCAAIAwAAAAD8AAETCAAIAwAAIAL8AAETCAAC8QQAIAL8AAETCAAAAwAAIAL8AAOBAAAAAwAAIAL8AAETCAAAAwAAAAD8AAETCAAAAwAAAAD8AAOBAAAIAwAAAAL8AAOBAAAC8QQAAAL8AAOBAAAC8QQAAAL8AAETCAAIAwAAAAL8AAETCAAIAwAAAAD8AAOBAAAIAwAAAAD8AAETCAAC8QQAAAD8AAETCAAC8QQAAAD8AAOBAAAC8QQAAAD8AAOBAAAC8QQAAAD8AAETCAAC8QQAIAL8AAETCAAC8QQAIAL8AAOBAAAC8QQAIAL8AAOBAAAIAwAAIAL8AAOBAAAIAwAAAAD8AAOBAAAC8QQAAAD8AAOBA/////wAA/7//////AAD/v/////8AAP+//////wAA/78AAP9//3//vwAA/3//f/+/AAD/f/9//78AAP9//3//v/9/AAD//////38AAP//////fwAA//////9/AAD//////3////9//7//f////3//v/9/////f/+//3////9//7////9//////////3//////////f/////////9///////9//3////+//3//f////7//f/9/////v/9//3////+/")
+}]
+
+[sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_77quw"]
+points = PackedVector3Array(23.5, 0.5, 7, 23.5, -0.5, 7, -2, 0.5, 7, -2, -0.5, 7, 23.5, 0.5, -49, 23.5, -0.5, -49, -2, 0.5, -49, -2, -0.5, -49)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_22nqq"]
+sky_top_color = Color(0.186859, 0.452268, 0.757143, 1)
+sky_horizon_color = Color(0.404987, 0.676205, 0.705177, 1)
+ground_bottom_color = Color(0.403922, 0.67451, 0.705882, 1)
+ground_horizon_color = Color(0.403922, 0.67451, 0.705882, 1)
+
+[sub_resource type="Sky" id="Sky_wvj7o"]
+sky_material = SubResource("ProceduralSkyMaterial_22nqq")
+
+[sub_resource type="Environment" id="Environment_5cedn"]
+background_mode = 2
+background_energy_multiplier = 1.4
+sky = SubResource("Sky_wvj7o")
+reflected_light_source = 1
+tonemap_mode = 2
+glow_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.107788, 0.733613, 1, 1)
+fog_density = 0.8
+fog_depth_begin = 90.0
+fog_depth_end = 120.3
+
+[node name="Character Custom" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lpkiu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -223.0
+offset_top = -40.0
+offset_right = 223.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 390
+
+[node name="Back" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_bn5u7")
+theme_override_font_sizes/font_size = 50
+text = "Back"
+
+[node name="Level Select" type="Button" parent="HBoxContainer"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+theme_override_constants/outline_size = 0
+theme_override_fonts/font = ExtResource("1_bn5u7")
+theme_override_font_sizes/font_size = 50
+text = "Level Select"
+
+[node name="Player Viewer" type="Node2D" parent="."]
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Player Viewer"]
+offset_left = 120.0
+offset_top = 71.0
+offset_right = 457.0
+offset_bottom = 465.0
+mouse_filter = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="Player Viewer/SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(337, 394)
+render_target_update_mode = 4
+
+[node name="Camera3D" type="Camera3D" parent="Player Viewer/SubViewportContainer/SubViewport"]
+transform = Transform3D(-1, -2.26267e-08, 8.44439e-08, 0, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, 0, 1.48605, -2.05984)
+
+[node name="Player" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("3_jodt1")]
+transform = Transform3D(-1, -1.77636e-15, -8.74228e-08, -2.26267e-08, 0.965926, 0.258819, 8.44439e-08, 0.258819, -0.965926, -1.80077e-07, -0.107112, -2.1612)
+
+[node name="SkinC" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"]
+unique_name_in_owner = true
+mesh = SubResource("CapsuleMesh_njvu8")
+
+[node name="Shirt2" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"]
+unique_name_in_owner = true
+transform = Transform3D(1.01, 0, 0, -3.38813e-21, 0.35, 4.81482e-35, 0, 0, 1.01, 0, 0.095, 0)
+layers = 16
+cast_shadow = 0
+mesh = SubResource("CylinderMesh_e0us1")
+
+[node name="PantsC" type="CSGMesh3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"]
+unique_name_in_owner = true
+transform = Transform3D(1.01, 0, 0, 0, 0.84, 0, 0, 0, 1.01, 0, -0.180421, 0)
+layers = 16
+operation = 2
+mesh = SubResource("CapsuleMesh_qlo73")
+material = SubResource("StandardMaterial3D_xdwoa")
+
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player/PantsC"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911767, 0)
+operation = 2
+radius = 0.565918
+
+[node name="Node3D" type="Node3D" parent="Player Viewer/SubViewportContainer/SubViewport"]
+
+[node name="FuncGodotMap" type="Node3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -20.145, -0.73, 0)
+script = ExtResource("4_8rn45")
+local_map_file = "uid://dvidp1a35rhsw"
+map_settings = ExtResource("5_77quw")
+metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
+
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap"]
+collision_mask = 0
+
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap/entity_0_worldspawn"]
+mesh = SubResource("ArrayMesh_8rn45")
+
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap/entity_0_worldspawn"]
+shape = SubResource("ConvexPolygonShape3D_77quw")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D"]
+transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -0.40863, 49.3627, 0.277023)
+light_color = Color(1, 1, 0.760784, 1)
+light_energy = 0.6
+shadow_enabled = true
+shadow_opacity = 0.65
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D"]
+environment = SubResource("Environment_5cedn")
+
+[node name="Customization Buttons" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 568.0
+offset_top = 72.0
+offset_right = 934.0
+offset_bottom = 473.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Customization Buttons"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="Skin" type="HBoxContainer" parent="Customization Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Skin"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_bn5u7")
+theme_override_font_sizes/font_size = 60
+text = "Skin"
+
+[node name="SkinBack" type="Button" parent="Customization Buttons/VBoxContainer/Skin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="SkinNext" type="Button" parent="Customization Buttons/VBoxContainer/Skin"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[node name="Shirt" type="HBoxContainer" parent="Customization Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Shirt"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_bn5u7")
+theme_override_font_sizes/font_size = 60
+text = "Shirt"
+
+[node name="ShirtBack" type="Button" parent="Customization Buttons/VBoxContainer/Shirt"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="ShirtNext" type="Button" parent="Customization Buttons/VBoxContainer/Shirt"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[node name="Pants" type="HBoxContainer" parent="Customization Buttons/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Pants"]
+layout_mode = 2
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = ExtResource("1_bn5u7")
+theme_override_font_sizes/font_size = 60
+text = "Pants"
+
+[node name="PantsBack" type="Button" parent="Customization Buttons/VBoxContainer/Pants"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = "<"
+
+[node name="PantsNext" type="Button" parent="Customization Buttons/VBoxContainer/Pants"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_font_sizes/font_size = 40
+text = ">"
+
+[connection signal="pressed" from="HBoxContainer/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="HBoxContainer/Level Select" to="." method="_on_level_select_pressed"]

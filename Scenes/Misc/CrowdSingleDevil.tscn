@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://c75b186w1oxr0"]
+
+[ext_resource type="Texture2D" uid="uid://c245huipukfwc" path="res://Assets/Animations/3dcrowddevils.png" id="1_tl0ir"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tl0ir"]
+atlas = ExtResource("1_tl0ir")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_df7en"]
+atlas = ExtResource("1_tl0ir")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bhgpr"]
+atlas = ExtResource("1_tl0ir")
+region = Rect2(800, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vnxq4"]
+atlas = ExtResource("1_tl0ir")
+region = Rect2(400, 0, 400, 400)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_epksp"]
+atlas = ExtResource("1_tl0ir")
+region = Rect2(0, 0, 400, 400)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0cusa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tl0ir")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_df7en")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bhgpr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vnxq4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_epksp")
+}],
+"loop": true,
+"name": &"DevilCheer",
+"speed": 5.0
+}]
+
+[node name="CrowdDevilSingle" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.000535011, 1.8257, 0.00987673)
+billboard = 1
+sprite_frames = SubResource("SpriteFrames_0cusa")
+animation = &"DevilCheer"
+autoplay = "DevilCheer"
+frame = 3
+frame_progress = 0.0276805
