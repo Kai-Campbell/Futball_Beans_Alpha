@@ -18,6 +18,12 @@ func _physics_process(delta: float) -> void:
 					kick_to = Global.away_goal_pos
 				
 				colliding_object.apply_impulse((kick_to - goalie.position).normalized() * 5)
-				#var last_pos = colliding_object.position
-				#colliding_object.position = hands.global_position
-				#await get_tree().create_timer(3).timeout
+				'''
+				var last_pos = colliding_object.position
+				colliding_object.position = hands.global_position
+				await get_tree().create_timer(3).timeout
+				colliding_object.apply_impulse((kick_to - goalie.position).normalized() * 1)
+				enabled = false
+				await get_tree().create_timer(0.5).timeout
+				enabled = true
+				'''

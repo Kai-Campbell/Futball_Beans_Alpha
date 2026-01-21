@@ -11,7 +11,7 @@ var start # reset spot for death barrier
 
 func _ready() -> void:
 	start = global_position
-
+	
 'player functions'
 
 func _kickball(player):

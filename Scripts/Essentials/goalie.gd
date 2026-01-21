@@ -53,14 +53,18 @@ func _ready():
 		Global.in_possession_away = false
 	
 func _physics_process(delta: float) -> void:
+	var ball_pos
 	if Global.scored == false:
-		var ball_pos = Vector3(ball.global_position.x, ball.global_position.y, ball.global_position.z)
+		#if global_position.distance_to(ball.global_position) <= 30:
+		ball_pos = Vector3(ball.global_position.x, ball.global_position.y, global_position.z)
+		#else:
+			#ball_pos = Vector3(ball.global_position.x, ball.global_position.y, global_position.z)
 		navigation_agent_3d.set_target_position(ball_pos)
 		var next_path_location = navigation_agent_3d.get_next_path_position()
 		var new_velocity = (next_path_location - global_position).normalized() * SPEED
 		
 		velocity = new_velocity
-		
+		velocity += get_gravity() * delta
 		
 		move_and_slide()
 		#velocity.move_toward(new_velocity, 0.25)

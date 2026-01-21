@@ -84,7 +84,6 @@ func _on_enemy_shooting_area_body_entered(body: Node3D) -> void:
 	print("in range")
 	in_range = true
 
-
 func _on_enemy_shooting_area_body_exited(body: Node3D) -> void:
 	print("gone")
 	in_range = false
