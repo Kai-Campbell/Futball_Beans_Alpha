@@ -359,12 +359,6 @@ points = PackedVector3Array(88.3761, 37.5, 167.837, 88.3761, 36.5, 167.837, 126,
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_v3lbl"]
 points = PackedVector3Array(113, 37.5, 7.46085, 113, 36.5, 7.46085, 127.837, 37.5, -7.37613, 127.837, 36.5, -7.37613, 75.3763, 37.5, -30.1631, 75.3763, 36.5, -30.1631, 90.2132, 37.5, -45, 90.2132, 36.5, -45)
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_ihj8v"]
-size = Vector3(16.8306, 3.34167, 30.5868)
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_ikv7p"]
-size = Vector3(21.9549, 2.84497, 23.5638)
-
 [sub_resource type="BoxShape3D" id="BoxShape3D_rxhc5"]
 size = Vector3(34.0006, 2.53113, 0.41748)
 
@@ -505,6 +499,12 @@ _data = {
 &"Move Back": SubResource("Animation_ikv7p"),
 &"RESET": SubResource("Animation_rxhc5")
 }
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ihj8v"]
+size = Vector3(16.8306, 3.34167, 30.5868)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_ikv7p"]
+size = Vector3(21.9549, 2.84497, 23.5638)
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p6ejd"]
 size = Vector3(1.01851, 1, 1.17664)
@@ -1073,24 +1073,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.00
 [node name="Crowd6" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.1981, 14.9136, 79.9399)
 
-[node name="AI Shooting Area" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.287, 0, 199.697)
-
-[node name="EnemyShootingArea" type="Area3D" parent="AI Shooting Area"]
-collision_mask = 32
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.4323, 2.16578, -93.0248)
-shape = SubResource("BoxShape3D_ihj8v")
-
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -29.1095, 2.23831, -89.3794)
-shape = SubResource("BoxShape3D_ikv7p")
-
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -42.0175, 2.23831, -91.9305)
-shape = SubResource("BoxShape3D_ikv7p")
-
 [node name="Scoreboard1" type="Node3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-08, -4.2222e-08, -6.767, 11.299, 86.478)
 
@@ -1271,6 +1253,24 @@ shape = SubResource("BoxShape3D_560i1")
 libraries = {
 &"": SubResource("AnimationLibrary_khro3")
 }
+
+[node name="AI Shooting Area" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.287, 0, 199.697)
+
+[node name="EnemyShootingArea" type="Area3D" parent="AI Shooting Area"]
+collision_mask = 32
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.4323, 2.16578, -93.0248)
+shape = SubResource("BoxShape3D_ihj8v")
+
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -29.1095, 2.23831, -89.3794)
+shape = SubResource("BoxShape3D_ikv7p")
+
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -42.0175, 2.23831, -91.9305)
+shape = SubResource("BoxShape3D_ikv7p")
 
 [node name="Areas for AI" type="Node3D" parent="."]
 
