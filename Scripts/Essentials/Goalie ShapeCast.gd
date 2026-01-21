@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 				elif goalie.home == true:
 					kick_to = Global.away_goal_pos
 				
-				colliding_object.apply_impulse((kick_to - goalie.position).normalized() * 5)
+				colliding_object.apply_impulse((kick_to - global_position).normalized() * 5)
 				'''
 				var last_pos = colliding_object.position
 				colliding_object.position = hands.global_position

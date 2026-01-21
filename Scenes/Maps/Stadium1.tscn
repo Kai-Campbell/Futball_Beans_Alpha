@@ -652,7 +652,7 @@ ball_path = NodePath("../../Ball")
 play_type = 3
 
 [node name="OpposingTeam" parent="EnemyAI" instance=ExtResource("9_o1xye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, -1.43277, 44.044)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, 1.6, 44.044)
 ball_path = NodePath("../../Ball")
 
 [node name="OpposingTeam3" parent="EnemyAI" instance=ExtResource("9_o1xye")]

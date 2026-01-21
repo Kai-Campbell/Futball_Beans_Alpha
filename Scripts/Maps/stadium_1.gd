@@ -7,7 +7,6 @@ extends Node3D
 @onready var ball: RigidBody3D = $Ball
 
 
-
 'stadium geometry'
 @onready var animation_player_away: AnimationPlayer = $"Goalie Area Away/AnimationPlayer"
 @onready var animation_player_home: AnimationPlayer = $"Goalie Area Home/AnimationPlayer"
