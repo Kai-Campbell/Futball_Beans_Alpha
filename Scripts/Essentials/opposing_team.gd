@@ -7,6 +7,7 @@ extends CharacterBody3D
 @export var player_path : NodePath
 @export var goal_path : NodePath
 
+'This is used mostly for the defenders and midfielders'
 enum STATE {Idle, Wait, Wander, Attack, Pass}
 var state : STATE = STATE.Idle
 
@@ -16,7 +17,7 @@ var wander_timer : float = 0.2
 var wander_timer_count : float = 0.0
 
 'this determines if the AI is more likely to attack, pass, or defend'
-'0 is attack, 1 is pass/playmaking, and 2 is defend, 3 is goalie'
+'0 is attack, 1 is pass/playmaking, 2 is defend, 3 is goalie'
 @export var play_type : int
 
 'Set these values when deciding if enemy AI will chase player or the ball'

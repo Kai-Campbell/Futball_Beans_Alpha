@@ -32,7 +32,7 @@ func _on_kick_timer_timeout() -> void:
 
 func _kick_towards_goal_AI(enemy, object):
 	var y = randi_range(-3, 3)
-	var x = randi_range(-9, 9) # 50 / 50 works too
+	var x = randi_range(-30, 30) # 30 / 30 works too, originally used -9 / 9
 	var random_goal_pos
 	if get_parent().get_parent().is_in_group("OpposingTeam"):
 		random_goal_pos = Vector3(Global.home_goal_pos.x + (x), Global.home_goal_pos.y + (y), Global.home_goal_pos.z)
