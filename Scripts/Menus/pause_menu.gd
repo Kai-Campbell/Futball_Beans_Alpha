@@ -13,7 +13,7 @@ func _ready():
 	paused.visible = true
 
 
-func _input(event: InputEvent):
+func _input(_event: InputEvent):
 	if Input.is_action_just_pressed("Pause"):
 		if get_tree().paused:
 			visible = false

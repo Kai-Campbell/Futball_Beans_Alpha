@@ -81,11 +81,11 @@ func _on_navigation_agent_3d_target_reached() -> void:
 			else:
 				state = STATE.Idle
 
-func _on_enemy_shooting_area_body_entered(body: Node3D) -> void:
+func _on_enemy_shooting_area_body_entered(_body: Node3D) -> void:
 	print("in range")
 	in_range = true
 
-func _on_enemy_shooting_area_body_exited(body: Node3D) -> void:
+func _on_enemy_shooting_area_body_exited(_body: Node3D) -> void:
 	print("gone")
 	in_range = false
 

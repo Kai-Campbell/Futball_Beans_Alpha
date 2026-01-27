@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://3vkky0gkhxqb"]
+[gd_scene format=3 uid="uid://3vkky0gkhxqb"]
 
 [ext_resource type="Script" uid="uid://b6ilwbprhsc8" path="res://Scripts/Essentials/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://dx5b0sb815gok" path="res://Assets/Player Customizations/Skins/Skin1.png" id="2_811lk"]
@@ -29,40 +29,40 @@ material = SubResource("StandardMaterial3D_ptc0m")
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fkybt"]
 albedo_texture = ExtResource("7_07ght")
 
-[node name="Player" type="CharacterBody3D" groups=["player"]]
+[node name="Player" type="CharacterBody3D" unique_id=362434367 groups=["player"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.82323, 0)
 collision_mask = 5
 script = ExtResource("1_4flbx")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=667942180]
 shape = SubResource("CapsuleShape3D_sh265")
 
-[node name="Head" type="Node3D" parent="."]
+[node name="Head" type="Node3D" parent="." unique_id=879440978]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.636293, 0.00389893)
 
-[node name="Camera3D" type="Camera3D" parent="Head"]
+[node name="Camera3D" type="Camera3D" parent="Head" unique_id=378016143]
 cull_mask = 1048559
 
-[node name="Face RayCast" type="RayCast3D" parent="Head/Camera3D"]
+[node name="Face RayCast" type="RayCast3D" parent="Head/Camera3D" unique_id=1234370532]
 transform = Transform3D(2.47, 0, 0, 0, -1.07967e-07, -2.47, 0, 2.47, -1.07967e-07, 0, 0, 0)
 enabled = false
 script = ExtResource("2_i3pqv")
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="Head"]
-transform = Transform3D(4, 0, 0, 0, -6.55671e-08, -1, 0, 1.5, -4.37114e-08, 0, -1.02601, 0.447545)
+[node name="ShapeCast3D" type="ShapeCast3D" parent="Head" unique_id=1569814665]
+transform = Transform3D(4, 0, 0, 0, -6.556708e-08, -1, 0, 1.5, -4.371139e-08, 0, -1.02601, 0.447545)
 shape = SubResource("CapsuleShape3D_i3pqv")
 collision_mask = 4
 script = ExtResource("4_hqtel")
 
-[node name="DashTimer" type="Timer" parent="."]
+[node name="DashTimer" type="Timer" parent="." unique_id=1199064966]
 wait_time = 2.0
 one_shot = true
 
-[node name="SlideTimer" type="Timer" parent="."]
+[node name="SlideTimer" type="Timer" parent="." unique_id=1008037906]
 wait_time = 2.0
 one_shot = true
 
-[node name="Helmet" type="CSGSphere3D" parent="."]
+[node name="Helmet" type="CSGSphere3D" parent="." unique_id=1332822262]
 transform = Transform3D(1.05, 0, 0, 0, 1.05, 0, 0, 0, 1.05, 0, 0.612118, 0)
 layers = 16
 operation = 2
@@ -70,28 +70,28 @@ radial_segments = 14
 rings = 8
 material = ExtResource("4_vgqql")
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Helmet"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Helmet" unique_id=656259204]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.385967, 0)
 layers = 16
 operation = 2
 
-[node name="Skin" type="MeshInstance3D" parent="."]
+[node name="Skin" type="MeshInstance3D" parent="." unique_id=199165432]
 mesh = SubResource("CapsuleMesh_8c4ey")
 
-[node name="Shirt" type="MeshInstance3D" parent="."]
+[node name="Shirt" type="MeshInstance3D" parent="." unique_id=124992465]
 transform = Transform3D(1.01, 0, 0, 0, 0.35, 0, 0, 0, 1.01, 0, 0.095, 0)
 layers = 16
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_ptc0m")
 
-[node name="Pants" type="CSGMesh3D" parent="."]
+[node name="Pants" type="CSGMesh3D" parent="." unique_id=405634897]
 transform = Transform3D(1.01, 0, 0, 0, 0.84, 0, 0, 0, 1.01, 0, -0.180421, 0)
 layers = 16
 operation = 2
 mesh = SubResource("CapsuleMesh_vgqql")
 material = SubResource("StandardMaterial3D_fkybt")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pants"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Pants" unique_id=481620606]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911767, 0)
 operation = 2
 radius = 0.565918

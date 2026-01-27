@@ -12,5 +12,5 @@ func time_left_in_match():
 	var seconds = int(time_left) % 60
 	return [minute, seconds]
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	timer.text = "%02d:%02d" % time_left_in_match()

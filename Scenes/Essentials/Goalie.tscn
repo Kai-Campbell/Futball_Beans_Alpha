@@ -19,7 +19,6 @@ layers = 65
 mesh = SubResource("CapsuleMesh_1lxoo")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.0887839, 0)
 shape = SubResource("CapsuleShape3D_p6ft6")
 
 [node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]

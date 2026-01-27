@@ -1,7 +1,7 @@
 extends ShapeCast3D
 
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if is_colliding():
 		var obj = get_collision_count()
 		for i in range(obj):

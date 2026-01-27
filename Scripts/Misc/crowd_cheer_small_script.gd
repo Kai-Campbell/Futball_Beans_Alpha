@@ -6,7 +6,7 @@ extends Node3D
 @onready var animated_sprite_3d_2: AnimatedSprite3D = $AnimatedSprite3D2
 @onready var animated_sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if Global.scored == true:
 		animated_sprite_3d.set_speed_scale(2.5)
 		animated_sprite_3d_2.set_speed_scale(2.5)

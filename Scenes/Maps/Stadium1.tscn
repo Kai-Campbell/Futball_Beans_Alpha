@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=4 uid="uid://l3ccn4bn0682"]
+[gd_scene format=4 uid="uid://l3ccn4bn0682"]
 
 [ext_resource type="Script" uid="uid://cwj1gm2jekgmj" path="res://Scripts/Maps/stadium_1.gd" id="1_76emn"]
 [ext_resource type="Script" uid="uid://cwu5cf7a0awcd" path="res://addons/func_godot/src/map/func_godot_map.gd" id="1_xk2fm"]
@@ -515,568 +515,573 @@ size = Vector3(89.3064, 6.2934, 24.89)
 [sub_resource type="BoxShape3D" id="BoxShape3D_yym8e"]
 size = Vector3(88.7413, 6.74402, 78.436)
 
-[node name="StadiumMap" type="Node3D"]
+[node name="StadiumMap" type="Node3D" unique_id=1147303145]
 script = ExtResource("1_76emn")
 
-[node name="Ball" parent="." instance=ExtResource("11_ihj8v")]
+[node name="Ball" parent="." unique_id=621339747 instance=ExtResource("11_ihj8v")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.2759, 1.09846, 59.9042)
 
-[node name="Goal" parent="." instance=ExtResource("13_rxhc5")]
+[node name="Goal" parent="." unique_id=645180017 instance=ExtResource("13_rxhc5")]
 transform = Transform3D(4.35258e-09, 0, -0.49, 0, 5.305, 0, 0.365, 0, 5.84319e-09, 49.2066, 0.969, -2.367)
 
-[node name="AwayGoalCenter" type="Node3D" parent="."]
+[node name="AwayGoalCenter" type="Node3D" parent="." unique_id=10884017]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6339, 3.15838, -3.46558)
 
-[node name="GoalH" parent="." instance=ExtResource("14_3vtrb")]
+[node name="GoalH" parent="." unique_id=1037833631 instance=ExtResource("14_3vtrb")]
 transform = Transform3D(-1.59547e-08, 0, 0.49, 0, 5.305, 0, -0.365, 0, -2.14186e-08, 33.8936, 0.968876, 123.236)
 
-[node name="HomeGoalCenter" type="Node3D" parent="."]
+[node name="HomeGoalCenter" type="Node3D" parent="." unique_id=1435395057]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.634, 3.158, 124.714)
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=2042372348]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -0.40863, 49.3627, 0.277023)
 light_color = Color(1, 1, 0.760784, 1)
 light_energy = 0.6
 shadow_enabled = true
 shadow_opacity = 0.65
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=561729057]
 environment = SubResource("Environment_ku0ht")
 
-[node name="PauseMenu" parent="." instance=ExtResource("15_y0wm8")]
+[node name="PauseMenu" parent="." unique_id=1761414839 instance=ExtResource("15_y0wm8")]
 
-[node name="Lines of Pitch" type="Node3D" parent="."]
+[node name="Lines of Pitch" type="Node3D" parent="." unique_id=1891637878]
 transform = Transform3D(-5.46392e-08, 0, 1.44, 0, 1, 0, -1.25, 0, -6.29444e-08, 41.34, 0.6, 60.411)
 
-[node name="Middle_Line" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Middle_Line" type="CSGBox3D" parent="Lines of Pitch" unique_id=1374566620]
 transform = Transform3D(1, 0, 6.71463e-13, 0, 1, 0, -4.1922e-13, 0, 1, 0.172852, -0.233459, -0.162689)
 size = Vector3(0.0625, 0.533081, 59.8763)
 
-[node name="Middle_Circle" type="CSGTorus3D" parent="Lines of Pitch"]
+[node name="Middle_Circle" type="CSGTorus3D" parent="Lines of Pitch" unique_id=1417781352]
 transform = Transform3D(7.01, 0, 0, 0, 7.01, 0, 0, 0, 7.01, 0, -0.11, 0)
 inner_radius = 0.95484
 sides = 18
 ring_sides = 9
 
-[node name="Side_Line" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Side_Line" type="CSGBox3D" parent="Lines of Pitch" unique_id=1083663379]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, -0.234, -30.069)
 size = Vector3(99.9917, 0.532288, 0.0771484)
 
-[node name="Side_Line2" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Side_Line2" type="CSGBox3D" parent="Lines of Pitch" unique_id=906091592]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.001, -0.239, 29.744)
 size = Vector3(99.9917, 0.542999, 0.0844727)
 
-[node name="Home_Line" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Home_Line" type="CSGBox3D" parent="Lines of Pitch" unique_id=1822193647]
 transform = Transform3D(1, 0, 7.88702e-13, 0, 1, 0, -4.93827e-13, 0, 1, 49.967, -0.234, -0.170927)
 size = Vector3(0.0582886, 0.527344, 59.804)
 
-[node name="Enemy_Line" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Enemy_Line" type="CSGBox3D" parent="Lines of Pitch" unique_id=2115789215]
 transform = Transform3D(1, 0, 5.61329e-13, 0, 1, 0, -3.51719e-13, 0, 1, -49.9651, -0.234, -0.127182)
 size = Vector3(0.0582886, 0.527344, 59.84)
 
-[node name="Goal_Lines" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Goal_Lines" type="CSGBox3D" parent="Lines of Pitch" unique_id=1025942697]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -46.7127, -0.23703, 11.7492)
 size = Vector3(6.57263, 0.52594, 0.0985718)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines" unique_id=1005033839]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.422)
 size = Vector3(6.57263, 0.52594, 0.0985718)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines" unique_id=1173863751]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23683, -0.112741, -11.7068)
 size = Vector3(0.100525, 0.750854, 23.5001)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines" unique_id=1242650340]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06295, 0.158508, 7.9493)
 size = Vector3(20.6738, 0.223999, 0.109131)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines" unique_id=1662526634]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0651, 0.158504, -31.599)
 size = Vector3(20.6738, 0.223999, 0.109131)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines" unique_id=1916192354]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.3848, 0.158504, -11.8257)
 size = Vector3(39.6513, 0.223999, 0.109131)
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Lines of Pitch/Goal_Lines" unique_id=286600637]
 transform = Transform3D(6.26996, -0.0218864, 0, 0.0218864, 6.26996, 0, 0, 0, 6.27, 14.785, -0.005041, -11.6803)
 inner_radius = 0.91659
 sides = 13
 ring_sides = 9
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines" unique_id=1391177524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52647, -0.169931, -11.9082)
 
-[node name="Goal_Lines2" type="CSGBox3D" parent="Lines of Pitch"]
+[node name="Goal_Lines2" type="CSGBox3D" parent="Lines of Pitch" unique_id=1924719638]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 46.6848, -0.23703, -12.3212)
 size = Vector3(6.57263, 0.52594, 0.0985718)
 
-[node name="CSGBox3D2" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGBox3D2" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2" unique_id=1023048103]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -23.422)
 size = Vector3(6.57263, 0.52594, 0.0985718)
 
-[node name="CSGBox3D" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGBox3D" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2" unique_id=1357393685]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.23683, -0.112741, -11.7068)
 size = Vector3(0.100525, 0.750854, 23.5001)
 
-[node name="CSGBox3D3" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGBox3D3" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2" unique_id=1326826577]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.06295, 0.158508, 7.9493)
 size = Vector3(20.6738, 0.223999, 0.109131)
 
-[node name="CSGBox3D4" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGBox3D4" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2" unique_id=321360870]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.0651, 0.158504, -31.599)
 size = Vector3(20.6738, 0.223999, 0.109131)
 
-[node name="CSGBox3D5" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGBox3D5" type="CSGBox3D" parent="Lines of Pitch/Goal_Lines2" unique_id=1392396659]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 17.3848, 0.158504, -11.8257)
 size = Vector3(39.6513, 0.223999, 0.109131)
 
-[node name="CSGTorus3D" type="CSGTorus3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGTorus3D" type="CSGTorus3D" parent="Lines of Pitch/Goal_Lines2" unique_id=1601025272]
 transform = Transform3D(6.26996, -0.0218864, 0, 0.0218864, 6.26996, 0, 0, 0, 6.27, 14.785, -0.005041, -11.6803)
 inner_radius = 0.91659
 sides = 13
 ring_sides = 9
 
-[node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines2"]
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines2" unique_id=883876827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52647, -0.169931, -11.9082)
 
-[node name="Player" parent="." instance=ExtResource("12_ikv7p")]
+[node name="Player" parent="." unique_id=1674203962 instance=ExtResource("12_ikv7p")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6376, 1.52042, 62.9825)
 
-[node name="EnemyAI" type="Node3D" parent="."]
+[node name="EnemyAI" type="Node3D" parent="." unique_id=572177914]
 
-[node name="Goalie" parent="EnemyAI" groups=["OpposingTeam"] instance=ExtResource("24_ikv7p")]
+[node name="Goalie" parent="EnemyAI" unique_id=1119644421 groups=["OpposingTeam"] instance=ExtResource("24_ikv7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.9117, 1.61645, 0.844778)
 ball_path = NodePath("../../Ball")
 play_type = 3
 
-[node name="OpposingTeam" parent="EnemyAI" instance=ExtResource("9_o1xye")]
+[node name="OpposingTeam" parent="EnemyAI" unique_id=336613782 instance=ExtResource("9_o1xye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, 1.6, 44.044)
 ball_path = NodePath("../../Ball")
 
-[node name="OpposingTeam3" parent="EnemyAI" instance=ExtResource("9_o1xye")]
+[node name="OpposingTeam3" parent="EnemyAI" unique_id=1202865766 instance=ExtResource("9_o1xye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9466, 1.65067, 13.0581)
 ball_path = NodePath("../../Ball")
 play_type = 2
 
-[node name="NavMap" type="NavigationRegion3D" parent="."]
+[node name="OpposingTeam4" parent="EnemyAI" unique_id=808047441 instance=ExtResource("9_o1xye")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9001, 1.65067, 13.0581)
+ball_path = NodePath("../../Ball")
+play_type = 2
+
+[node name="NavMap" type="NavigationRegion3D" parent="." unique_id=1027439116]
 navigation_mesh = SubResource("NavigationMesh_76emn")
 
-[node name="FuncGodotMap" type="Node3D" parent="NavMap"]
+[node name="FuncGodotMap" type="Node3D" parent="NavMap" unique_id=1518954890]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0822563, 0, -0.0584526)
 script = ExtResource("1_xk2fm")
 local_map_file = "uid://bn22dn06t3jhj"
 map_settings = ExtResource("2_3vtrb")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavMap/FuncGodotMap"]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="NavMap/FuncGodotMap" unique_id=752285163]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1458474455]
 mesh = SubResource("ArrayMesh_xk2fm")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=339328818]
 shape = SubResource("ConvexPolygonShape3D_3vtrb")
 
-[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_1_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1613155337]
 shape = SubResource("ConvexPolygonShape3D_y0wm8")
 
-[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_2_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=598635472]
 shape = SubResource("ConvexPolygonShape3D_t7qvo")
 
-[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_3_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1559649725]
 shape = SubResource("ConvexPolygonShape3D_k3gnm")
 
-[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_4_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1226106909]
 shape = SubResource("ConvexPolygonShape3D_76emn")
 
-[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_5_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1764811938]
 shape = SubResource("ConvexPolygonShape3D_o1xye")
 
-[node name="entity_0_brush_6_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_6_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1148491688]
 shape = SubResource("ConvexPolygonShape3D_h6j26")
 
-[node name="entity_0_brush_7_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_7_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=2056547708]
 shape = SubResource("ConvexPolygonShape3D_almk2")
 
-[node name="entity_0_brush_8_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_8_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=423739022]
 shape = SubResource("ConvexPolygonShape3D_es0v7")
 
-[node name="entity_0_brush_9_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_9_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1689074856]
 shape = SubResource("ConvexPolygonShape3D_ihj8v")
 
-[node name="entity_0_brush_10_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_10_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1128794115]
 shape = SubResource("ConvexPolygonShape3D_ikv7p")
 
-[node name="entity_0_brush_11_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_11_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=2130258006]
 shape = SubResource("ConvexPolygonShape3D_rxhc5")
 
-[node name="entity_0_brush_12_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_12_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1414108059]
 shape = SubResource("ConvexPolygonShape3D_khro3")
 
-[node name="entity_0_brush_13_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_13_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=479010257]
 shape = SubResource("ConvexPolygonShape3D_560i1")
 
-[node name="entity_0_brush_14_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_14_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=2017212107]
 shape = SubResource("ConvexPolygonShape3D_p6ejd")
 
-[node name="entity_0_brush_15_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_15_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=558547598]
 shape = SubResource("ConvexPolygonShape3D_jujkh")
 
-[node name="entity_0_brush_16_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_16_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=935076328]
 shape = SubResource("ConvexPolygonShape3D_yym8e")
 
-[node name="entity_0_brush_17_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_17_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=978543074]
 shape = SubResource("ConvexPolygonShape3D_0bvf2")
 
-[node name="entity_0_brush_18_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_18_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=487156046]
 shape = SubResource("ConvexPolygonShape3D_jdma3")
 
-[node name="entity_0_brush_19_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_19_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=701950349]
 shape = SubResource("ConvexPolygonShape3D_ro60y")
 
-[node name="entity_0_brush_20_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_20_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=526818525]
 shape = SubResource("ConvexPolygonShape3D_mcxai")
 
-[node name="entity_0_brush_21_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_21_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=323458074]
 shape = SubResource("ConvexPolygonShape3D_l6ghg")
 
-[node name="entity_0_brush_22_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_22_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1424009075]
 shape = SubResource("ConvexPolygonShape3D_2wh7x")
 
-[node name="entity_0_brush_23_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_23_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1060872495]
 shape = SubResource("ConvexPolygonShape3D_i1qvv")
 
-[node name="entity_0_brush_24_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_24_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1873998854]
 shape = SubResource("ConvexPolygonShape3D_p11uv")
 
-[node name="entity_0_brush_25_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_25_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1262928584]
 shape = SubResource("ConvexPolygonShape3D_bxe1v")
 
-[node name="entity_0_brush_26_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_26_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1553855845]
 shape = SubResource("ConvexPolygonShape3D_xpx6i")
 
-[node name="entity_0_brush_27_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_27_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1698153338]
 shape = SubResource("ConvexPolygonShape3D_kr8en")
 
-[node name="entity_0_brush_28_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_28_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=599556818]
 shape = SubResource("ConvexPolygonShape3D_1se7t")
 
-[node name="entity_0_brush_29_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_29_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1431683443]
 shape = SubResource("ConvexPolygonShape3D_rn7ns")
 
-[node name="entity_0_brush_30_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_30_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1354500958]
 shape = SubResource("ConvexPolygonShape3D_qpufy")
 
-[node name="entity_0_brush_31_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_31_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=222746006]
 shape = SubResource("ConvexPolygonShape3D_peero")
 
-[node name="entity_0_brush_32_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_32_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1595096781]
 shape = SubResource("ConvexPolygonShape3D_x1vbd")
 
-[node name="entity_0_brush_33_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_33_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1252649981]
 shape = SubResource("ConvexPolygonShape3D_yblne")
 
-[node name="entity_0_brush_34_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_34_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1749493166]
 shape = SubResource("ConvexPolygonShape3D_f8um2")
 
-[node name="entity_0_brush_35_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_35_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1030601638]
 shape = SubResource("ConvexPolygonShape3D_atvp5")
 
-[node name="entity_0_brush_36_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_36_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=887535870]
 shape = SubResource("ConvexPolygonShape3D_k0k50")
 
-[node name="entity_0_brush_37_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_37_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1369415069]
 shape = SubResource("ConvexPolygonShape3D_wu2u7")
 
-[node name="entity_0_brush_38_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_38_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=171080684]
 shape = SubResource("ConvexPolygonShape3D_b225s")
 
-[node name="entity_0_brush_39_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_39_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=713102805]
 shape = SubResource("ConvexPolygonShape3D_gj2sp")
 
-[node name="entity_0_brush_40_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_40_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=866403620]
 shape = SubResource("ConvexPolygonShape3D_erh5g")
 
-[node name="entity_0_brush_41_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_41_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1257773086]
 shape = SubResource("ConvexPolygonShape3D_6l5it")
 
-[node name="entity_0_brush_42_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_42_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1022735463]
 shape = SubResource("ConvexPolygonShape3D_7pupe")
 
-[node name="entity_0_brush_43_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_43_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=545558905]
 shape = SubResource("ConvexPolygonShape3D_e03d6")
 
-[node name="entity_0_brush_44_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_44_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=124872320]
 shape = SubResource("ConvexPolygonShape3D_7yqap")
 
-[node name="entity_0_brush_45_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_45_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=728172282]
 shape = SubResource("ConvexPolygonShape3D_jhxpm")
 
-[node name="entity_0_brush_46_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_46_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1862974610]
 shape = SubResource("ConvexPolygonShape3D_3h7lf")
 
-[node name="entity_0_brush_47_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_47_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=574311230]
 shape = SubResource("ConvexPolygonShape3D_tne7g")
 
-[node name="entity_0_brush_48_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_48_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=303306733]
 shape = SubResource("ConvexPolygonShape3D_ben4l")
 
-[node name="entity_0_brush_49_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_49_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1421475342]
 shape = SubResource("ConvexPolygonShape3D_aleh7")
 
-[node name="entity_0_brush_50_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_50_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=743429553]
 shape = SubResource("ConvexPolygonShape3D_ifb2n")
 
-[node name="entity_0_brush_51_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_51_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1156696960]
 shape = SubResource("ConvexPolygonShape3D_j70nl")
 
-[node name="entity_0_brush_52_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_52_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=898894322]
 shape = SubResource("ConvexPolygonShape3D_gqqoc")
 
-[node name="entity_0_brush_53_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_53_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1427794625]
 shape = SubResource("ConvexPolygonShape3D_oa3ts")
 
-[node name="entity_0_brush_54_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_54_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=560248966]
 shape = SubResource("ConvexPolygonShape3D_0w6s1")
 
-[node name="entity_0_brush_55_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_55_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1678572689]
 shape = SubResource("ConvexPolygonShape3D_2t5mt")
 
-[node name="entity_0_brush_56_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_56_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1049173328]
 shape = SubResource("ConvexPolygonShape3D_dex7o")
 
-[node name="entity_0_brush_57_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_57_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=2062907225]
 shape = SubResource("ConvexPolygonShape3D_trhe8")
 
-[node name="entity_0_brush_58_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_58_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1808800259]
 shape = SubResource("ConvexPolygonShape3D_7jmig")
 
-[node name="entity_0_brush_59_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_59_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=2087896937]
 shape = SubResource("ConvexPolygonShape3D_s6j2d")
 
-[node name="entity_0_brush_60_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_60_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=269217608]
 shape = SubResource("ConvexPolygonShape3D_t2325")
 
-[node name="entity_0_brush_61_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_61_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=42029335]
 shape = SubResource("ConvexPolygonShape3D_jukw5")
 
-[node name="entity_0_brush_62_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_62_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1295097896]
 shape = SubResource("ConvexPolygonShape3D_tqvxm")
 
-[node name="entity_0_brush_63_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_63_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1764514773]
 shape = SubResource("ConvexPolygonShape3D_erpv3")
 
-[node name="entity_0_brush_64_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_64_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=704101677]
 shape = SubResource("ConvexPolygonShape3D_pg840")
 
-[node name="entity_0_brush_65_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_65_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1330329436]
 shape = SubResource("ConvexPolygonShape3D_ftq4u")
 
-[node name="entity_0_brush_66_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_66_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1523116463]
 shape = SubResource("ConvexPolygonShape3D_qtshi")
 
-[node name="entity_0_brush_67_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_67_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=895357123]
 shape = SubResource("ConvexPolygonShape3D_pfpdc")
 
-[node name="entity_0_brush_68_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_68_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1633821014]
 shape = SubResource("ConvexPolygonShape3D_6rwa5")
 
-[node name="entity_0_brush_69_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_69_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=1611161870]
 shape = SubResource("ConvexPolygonShape3D_5r6be")
 
-[node name="entity_0_brush_70_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_70_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=44931762]
 shape = SubResource("ConvexPolygonShape3D_fqd45")
 
-[node name="entity_0_brush_71_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_71_collision_shape" type="CollisionShape3D" parent="NavMap/FuncGodotMap/entity_0_worldspawn" unique_id=629407087]
 shape = SubResource("ConvexPolygonShape3D_v3lbl")
 
-[node name="Crowd Sprites" type="Node3D" parent="."]
+[node name="Crowd Sprites" type="Node3D" parent="." unique_id=1068534559]
 
-[node name="CrowdSpritesSide1" type="Node3D" parent="Crowd Sprites"]
+[node name="CrowdSpritesSide1" type="Node3D" parent="Crowd Sprites" unique_id=1739792865]
 
-[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=561142762 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7971, 4.15752, 30.8036)
 
-[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=501123400 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.2629, 7.04538, 92.4357)
 
-[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=1758140508 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.29, 8.69816, 30.8036)
 
-[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=896716510 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.158, 12.2554, 90.0777)
 
-[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=8057496 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.3293, 14.5086, 30.8036)
 
-[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=396170790 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.7125, 17.265, 90.9265)
 
-[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=1509041235 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.4575, 19.1249, 30.8036)
 
-[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=514710534 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.0432, 20.5751, 89.4434)
 
-[node name="Crowd" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=691526225 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 4.0359, 79.1056)
 
-[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=1730973511 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 5.34116, 120.743)
 
-[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesSide1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesSide1" unique_id=1576369599 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 5.19243, 99.0531)
 
-[node name="CrowdSpritesSide2" type="Node3D" parent="Crowd Sprites"]
+[node name="CrowdSpritesSide2" type="Node3D" parent="Crowd Sprites" unique_id=928317588]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.9771, 2.47353, 120.211)
 
-[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1938020230 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7971, 4.15752, 30.8036)
 
-[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=234928270 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.2629, 7.04538, 92.4357)
 
-[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=2006681306 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.29, 8.69816, 30.8036)
 
-[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1788571231 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.158, 12.2554, 90.0777)
 
-[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1467522962 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.3293, 14.5086, 30.8036)
 
-[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=120390990 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.7125, 17.265, 90.9265)
 
-[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=862560857 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.4575, 19.1249, 30.8036)
 
-[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=2033627968 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -38.0432, 20.5751, 89.4434)
 
-[node name="Crowd" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=825139021 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 4.0359, 79.1056)
 
-[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=529130037 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 5.34116, 120.743)
 
-[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=635955729 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 5.19243, 99.0531)
 
-[node name="Crowd4" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd4" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1771089610 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4993, 1.24766, 118.21)
 
-[node name="Crowd5" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd5" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=862849407 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4993, 1.24766, 99.3557)
 
-[node name="Crowd6" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd6" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=785498356 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4993, 1.24766, 80.4878)
 
-[node name="Crowd7" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd7" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1167649976 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4993, 1.24766, 38.0085)
 
-[node name="Crowd8" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd8" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1540194774 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4993, 1.24766, 19.1543)
 
-[node name="Crowd9" parent="Crowd Sprites/CrowdSpritesSide2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd9" parent="Crowd Sprites/CrowdSpritesSide2" unique_id=1865131964 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -10.4993, 1.24766, 0.286354)
 
-[node name="CrowdSpritesEnd1" type="Node3D" parent="Crowd Sprites"]
+[node name="CrowdSpritesEnd1" type="Node3D" parent="Crowd Sprites" unique_id=672748411]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -0.370375, 0, 119.56)
 
-[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1071540525 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7971, 4.15752, 30.8036)
 
-[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=2071362717 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.2629, 7.04538, 51.4133)
 
-[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1818788368 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.29, 8.69816, 30.8036)
 
-[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=823465301 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.158, 12.2554, 51.875)
 
-[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1327572176 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.3293, 14.5086, 30.8036)
 
-[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=735480866 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.7125, 17.265, 51.8345)
 
-[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=408955601 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.4575, 19.1249, 30.8036)
 
-[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1604261993 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8422, 20.9917, 48.961)
 
-[node name="Crowd" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=432220664 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 4.0359, 79.1056)
 
-[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1113145791 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.9512, 9.06464, 79.1056)
 
-[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=2083845312 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.5077, 11.0529, 1.9239)
 
-[node name="Crowd4" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd4" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1630590516 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.2975, 6.23403, 1.9239)
 
-[node name="Crowd5" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd5" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=1999144405 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.0056, 15.3223, 1.9239)
 
-[node name="Crowd6" parent="Crowd Sprites/CrowdSpritesEnd1" instance=ExtResource("17_k3gnm")]
+[node name="Crowd6" parent="Crowd Sprites/CrowdSpritesEnd1" unique_id=445779036 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.1981, 14.9136, 79.9399)
 
-[node name="CrowdSpritesEnd2" type="Node3D" parent="Crowd Sprites"]
+[node name="CrowdSpritesEnd2" type="Node3D" parent="Crowd Sprites" unique_id=51520251]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, 81.6544, 0, 0.356419)
 
-[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=1450071122 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -12.7971, 4.15752, 30.8036)
 
-[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig2" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=2021483156 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.2629, 7.04538, 51.4133)
 
-[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig3" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=272869566 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -19.29, 8.69816, 30.8036)
 
-[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig4" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=1279677918 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -23.158, 12.2554, 51.875)
 
-[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig5" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=388172941 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -27.3293, 14.5086, 30.8036)
 
-[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig6" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=2106499641 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.7125, 17.265, 51.8345)
 
-[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig7" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=21232657 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -34.4575, 19.1249, 30.8036)
 
-[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("16_t7qvo")]
+[node name="CrowdCheerBig8" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=504023810 instance=ExtResource("16_t7qvo")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -39.8422, 20.9917, 48.961)
 
-[node name="Crowd" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=1400930257 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -13.6193, 4.0359, 79.1056)
 
-[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd2" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=289044193 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -20.9512, 9.06464, 79.1056)
 
-[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd3" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=542199567 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -24.5077, 11.0529, 1.9239)
 
-[node name="Crowd4" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd4" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=2118785000 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -16.2975, 6.23403, 1.9239)
 
-[node name="Crowd5" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd5" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=568407036 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.0056, 15.3223, 1.9239)
 
-[node name="Crowd6" parent="Crowd Sprites/CrowdSpritesEnd2" instance=ExtResource("17_k3gnm")]
+[node name="Crowd6" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=1280748808 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.1981, 14.9136, 79.9399)
 
-[node name="Scoreboard1" type="Node3D" parent="."]
+[node name="Scoreboard1" type="Node3D" parent="." unique_id=745202923]
 transform = Transform3D(-4.37114e-08, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-08, -4.2222e-08, -6.767, 11.299, 86.478)
 
-[node name="Score Home" type="Label3D" parent="Scoreboard1"]
+[node name="Score Home" type="Label3D" parent="Scoreboard1" unique_id=1295341721]
 transform = Transform3D(-1, -8.88178e-16, 8.74228e-08, 1.77636e-15, 1, 1.46672e-15, -8.74228e-08, -4.77671e-16, -1, -13.278, 19.5654, 11.4974)
 pixel_size = 0.1
 text = "0"
@@ -1085,7 +1090,7 @@ font_size = 120
 outline_size = 0
 script = ExtResource("21_ikv7p")
 
-[node name="Score Away" type="Label3D" parent="Scoreboard1"]
+[node name="Score Away" type="Label3D" parent="Scoreboard1" unique_id=2013594806]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36.138, 19.565, 11.497)
 pixel_size = 0.1
 text = "0"
@@ -1094,33 +1099,33 @@ font_size = 120
 outline_size = 0
 script = ExtResource("22_rxhc5")
 
-[node name="Beans" type="Label3D" parent="Scoreboard1"]
+[node name="Beans" type="Label3D" parent="Scoreboard1" unique_id=852197437]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.418, 27.263, 11.479)
 text = "Beans"
 font_size = 250
 
-[node name="Away" type="Label3D" parent="Scoreboard1"]
+[node name="Away" type="Label3D" parent="Scoreboard1" unique_id=1726760746]
 transform = Transform3D(-1, -8.88178e-16, -8.74228e-08, -1.77636e-15, 1, -5.11373e-16, 8.74228e-08, -4.77671e-16, -1, -36.292, 27.263, 11.479)
 text = "Away"
 font_size = 250
 
-[node name="Time" type="Node3D" parent="Scoreboard1"]
+[node name="Time" type="Node3D" parent="Scoreboard1" unique_id=562710187]
 script = ExtResource("23_khro3")
 
-[node name="Timer" type="Label3D" parent="Scoreboard1/Time"]
+[node name="Timer" type="Label3D" parent="Scoreboard1/Time" unique_id=1423378918]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25.39, 17.904, 11.479)
 text = "11:11"
 font = ExtResource("20_ihj8v")
 font_size = 900
 outline_size = 0
 
-[node name="Countdown Timer" type="Timer" parent="Scoreboard1/Time"]
+[node name="Countdown Timer" type="Timer" parent="Scoreboard1/Time" unique_id=1219051666]
 wait_time = 300.0
 
-[node name="Scoreboard2" type="Node3D" parent="."]
+[node name="Scoreboard2" type="Node3D" parent="." unique_id=169459033]
 transform = Transform3D(1.19249e-08, -0.258819, 0.965926, 0, 0.965926, 0.258819, -1, -3.08639e-09, 1.15185e-08, 88.8984, 11.299, 36.4566)
 
-[node name="Score Home" type="Label3D" parent="Scoreboard2"]
+[node name="Score Home" type="Label3D" parent="Scoreboard2" unique_id=147721198]
 transform = Transform3D(-1, -8.88178e-16, 8.74228e-08, 1.77636e-15, 1, 1.46672e-15, -8.74228e-08, -4.77671e-16, -1, -13.278, 19.5654, 11.4974)
 pixel_size = 0.1
 text = "0"
@@ -1129,7 +1134,7 @@ font_size = 120
 outline_size = 0
 script = ExtResource("21_ikv7p")
 
-[node name="Score Away" type="Label3D" parent="Scoreboard2"]
+[node name="Score Away" type="Label3D" parent="Scoreboard2" unique_id=313015573]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -36.138, 19.565, 11.497)
 pixel_size = 0.1
 text = "0"
@@ -1138,175 +1143,171 @@ font_size = 120
 outline_size = 0
 script = ExtResource("22_rxhc5")
 
-[node name="Beans" type="Label3D" parent="Scoreboard2"]
+[node name="Beans" type="Label3D" parent="Scoreboard2" unique_id=625163546]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -13.418, 27.263, 11.479)
 text = "Beans"
 font_size = 250
 
-[node name="Away" type="Label3D" parent="Scoreboard2"]
+[node name="Away" type="Label3D" parent="Scoreboard2" unique_id=1344926258]
 transform = Transform3D(-1, -8.88178e-16, -8.74228e-08, -1.77636e-15, 1, -5.11373e-16, 8.74228e-08, -4.77671e-16, -1, -36.292, 27.263, 11.479)
 text = "Away"
 font_size = 250
 
-[node name="Time" type="Node3D" parent="Scoreboard2"]
+[node name="Time" type="Node3D" parent="Scoreboard2" unique_id=277226282]
 script = ExtResource("23_khro3")
 
-[node name="Timer" type="Label3D" parent="Scoreboard2/Time"]
+[node name="Timer" type="Label3D" parent="Scoreboard2/Time" unique_id=1881915148]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -25.1, 17.904, 11.479)
 text = "11:11"
 font = ExtResource("20_ihj8v")
 font_size = 900
 outline_size = 0
 
-[node name="Countdown Timer" type="Timer" parent="Scoreboard2/Time"]
+[node name="Countdown Timer" type="Timer" parent="Scoreboard2/Time" unique_id=410379529]
 wait_time = 300.0
 
-[node name="Goalie Area Away" type="Node3D" parent="."]
+[node name="Goalie Area Away" type="Node3D" parent="." unique_id=10118769]
 
-[node name="Away Goalie Front Boundary" type="AnimatableBody3D" parent="Goalie Area Away"]
+[node name="Away Goalie Front Boundary" type="AnimatableBody3D" parent="Goalie Area Away" unique_id=51498368]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3884, 1.07956, 6.70542)
 collision_layer = 64
 collision_mask = 64
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/Away Goalie Front Boundary"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/Away Goalie Front Boundary" unique_id=2050461889]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10477, 0.765564, -0.29126)
 shape = SubResource("BoxShape3D_rxhc5")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Goalie Area Away"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 13.2096, 0, -16.4558)
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Goalie Area Away" unique_id=79431065]
+transform = Transform3D(0.70710707, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710707, 13.2096, 0, -16.4558)
 collision_layer = 64
 collision_mask = 64
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/AnimatableBody3D" unique_id=571975730]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9526, 1.78545, 1.81871)
 shape = SubResource("BoxShape3D_khro3")
 
-[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="Goalie Area Away"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 36.158, 0, 17.57)
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="Goalie Area Away" unique_id=1273067458]
+transform = Transform3D(0.70710707, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.70710707, 36.158, 0, 17.57)
 collision_layer = 64
 collision_mask = 64
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/AnimatableBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/AnimatableBody3D2" unique_id=1025118916]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9526, 1.78545, 1.81871)
 shape = SubResource("BoxShape3D_khro3")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="Goalie Area Away"]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Goalie Area Away" unique_id=281009585]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7498, 0.652434, -3.0905)
 collision_layer = 64
 collision_mask = 64
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/StaticBody3D4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Away/StaticBody3D4" unique_id=1463066135]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758667, 0.712341, -0.0562019)
 shape = SubResource("BoxShape3D_560i1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Goalie Area Away"]
-libraries = {
-&"": SubResource("AnimationLibrary_khro3")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Goalie Area Away" unique_id=1687839600]
+libraries/ = SubResource("AnimationLibrary_khro3")
 
-[node name="Goalie Area Home" type="Node3D" parent="."]
+[node name="Goalie Area Home" type="Node3D" parent="." unique_id=1392188735]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 83.363, 0, 120.748)
 
-[node name="Away Goalie Front Boundary" type="AnimatableBody3D" parent="Goalie Area Home"]
+[node name="Away Goalie Front Boundary" type="AnimatableBody3D" parent="Goalie Area Home" unique_id=1607339384]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.3884, 1.07956, 6.70542)
 collision_layer = 64
 collision_mask = 64
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/Away Goalie Front Boundary"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/Away Goalie Front Boundary" unique_id=550322530]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.10477, 0.765564, -0.29126)
 shape = SubResource("BoxShape3D_rxhc5")
 
-[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Goalie Area Home"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 13.2096, 0, -16.4558)
+[node name="AnimatableBody3D" type="AnimatableBody3D" parent="Goalie Area Home" unique_id=665919502]
+transform = Transform3D(0.70710707, 0, -0.7071068, 0, 1, 0, 0.7071068, 0, 0.70710707, 13.2096, 0, -16.4558)
 collision_layer = 64
 collision_mask = 64
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/AnimatableBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/AnimatableBody3D" unique_id=2112047494]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9526, 1.78545, 1.81871)
 shape = SubResource("BoxShape3D_khro3")
 
-[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="Goalie Area Home"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 36.158, 0, 17.57)
+[node name="AnimatableBody3D2" type="AnimatableBody3D" parent="Goalie Area Home" unique_id=2064906653]
+transform = Transform3D(0.70710707, 0, 0.7071068, 0, 1, 0, -0.7071068, 0, 0.70710707, 36.158, 0, 17.57)
 collision_layer = 64
 collision_mask = 64
 sync_to_physics = false
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/AnimatableBody3D2"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/AnimatableBody3D2" unique_id=1644528625]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23.9526, 1.78545, 1.81871)
 shape = SubResource("BoxShape3D_khro3")
 
-[node name="StaticBody3D4" type="StaticBody3D" parent="Goalie Area Home"]
+[node name="StaticBody3D4" type="StaticBody3D" parent="Goalie Area Home" unique_id=1136458097]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.7498, 0.652434, -3.0905)
 collision_layer = 64
 collision_mask = 64
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/StaticBody3D4"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Goalie Area Home/StaticBody3D4" unique_id=195538987]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.758667, 0.712341, -0.0562019)
 shape = SubResource("BoxShape3D_560i1")
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Goalie Area Home"]
-libraries = {
-&"": SubResource("AnimationLibrary_khro3")
-}
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Goalie Area Home" unique_id=425983084]
+libraries/ = SubResource("AnimationLibrary_khro3")
 
-[node name="AI Shooting Area" type="Node3D" parent="."]
+[node name="AI Shooting Area" type="Node3D" parent="." unique_id=346965524]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.287, 0, 199.697)
 
-[node name="EnemyShootingArea" type="Area3D" parent="AI Shooting Area"]
+[node name="EnemyShootingArea" type="Area3D" parent="AI Shooting Area" unique_id=2009699727]
 collision_mask = 32
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea" unique_id=322129710]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -34.4323, 2.16578, -93.0248)
 shape = SubResource("BoxShape3D_ihj8v")
 
-[node name="CollisionShape3D3" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
+[node name="CollisionShape3D3" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea" unique_id=1621057253]
 transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, -29.1095, 2.23831, -89.3794)
 shape = SubResource("BoxShape3D_ikv7p")
 
-[node name="CollisionShape3D2" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea"]
+[node name="CollisionShape3D2" type="CollisionShape3D" parent="AI Shooting Area/EnemyShootingArea" unique_id=936974837]
 transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, -42.0175, 2.23831, -91.9305)
 shape = SubResource("BoxShape3D_ikv7p")
 
-[node name="Areas for AI" type="Node3D" parent="."]
+[node name="Areas for AI" type="Node3D" parent="." unique_id=1983298660]
 
-[node name="Away Goal Close" type="Area3D" parent="Areas for AI"]
+[node name="Away Goal Close" type="Area3D" parent="Areas for AI" unique_id=1641782944]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8743, 0, 16.768)
 collision_mask = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Away Goal Close"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Away Goal Close" unique_id=984724911]
 transform = Transform3D(87.795, 0, 0, 0, 9.5, 0, 0, 0, 29.14, 0.0797005, 0.978453, -4.78066)
 shape = SubResource("BoxShape3D_p6ejd")
 
-[node name="Away Midfield" type="Area3D" parent="Areas for AI"]
+[node name="Away Midfield" type="Area3D" parent="Areas for AI" unique_id=179389744]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Away Midfield"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Away Midfield" unique_id=1886887120]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8842, 3.58457, 40.6231)
 shape = SubResource("BoxShape3D_jujkh")
 
-[node name="Away Attacker" type="Area3D" parent="Areas for AI"]
+[node name="Away Attacker" type="Area3D" parent="Areas for AI" unique_id=1307935950]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.1557, 0.927864, 60.5487)
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Away Attacker"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Away Attacker" unique_id=205680082]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.04972, 2.9103, 25.0012)
 shape = SubResource("BoxShape3D_yym8e")
 
-[node name="Home Goal Close" type="Area3D" parent="Areas for AI"]
+[node name="Home Goal Close" type="Area3D" parent="Areas for AI" unique_id=583464958]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.8743, 0, 112.374)
 collision_mask = 5
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Home Goal Close"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Areas for AI/Home Goal Close" unique_id=253988152]
 transform = Transform3D(87.795, 0, 0, 0, 9.5, 0, 0, 0, 29.14, 0.0797005, 0.978453, -5.1239)
 shape = SubResource("BoxShape3D_p6ejd")
 
-[node name="Home AI" type="Node3D" parent="."]
+[node name="Home AI" type="Node3D" parent="." unique_id=1289981652]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 40.1147, 1.59658, 120.919)
 
-[node name="HomeGoalie" parent="Home AI" groups=["OpposingTeam"] instance=ExtResource("24_ikv7p")]
+[node name="HomeGoalie" parent="Home AI" unique_id=2108901467 groups=["OpposingTeam"] instance=ExtResource("24_ikv7p")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.065783, -1.12202)
 ball_path = NodePath("../../Ball")
 home = true
