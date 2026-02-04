@@ -2,7 +2,6 @@ extends Node
 
 @onready var player: CharacterBody3D = $"Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"
 
-
 'Maps'
 @onready var Stadium1
 @onready var hell

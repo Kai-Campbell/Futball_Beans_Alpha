@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://b3dpn2ivu82w1"]
+[gd_scene format=4 uid="uid://b3dpn2ivu82w1"]
 
 [ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="1_bn5u7"]
 [ext_resource type="Script" uid="uid://bxn6vuc8dq6hd" path="res://Scripts/Menus/character_custom.gd" id="1_lpkiu"]
@@ -67,7 +67,7 @@ fog_density = 0.8
 fog_depth_begin = 90.0
 fog_depth_end = 120.3
 
-[node name="Character Custom" type="Control"]
+[node name="Character Custom" type="Control" unique_id=387198851]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -76,7 +76,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_lpkiu")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1967145302]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -90,7 +90,7 @@ grow_horizontal = 2
 grow_vertical = 0
 theme_override_constants/separation = 390
 
-[node name="Back" type="Button" parent="HBoxContainer"]
+[node name="Back" type="Button" parent="HBoxContainer" unique_id=1489133946]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/outline_size = 0
@@ -98,7 +98,7 @@ theme_override_fonts/font = ExtResource("1_bn5u7")
 theme_override_font_sizes/font_size = 50
 text = "Back"
 
-[node name="Level Select" type="Button" parent="HBoxContainer"]
+[node name="Level Select" type="Button" parent="HBoxContainer" unique_id=559667217]
 custom_minimum_size = Vector2(250, 0)
 layout_mode = 2
 theme_override_constants/outline_size = 0
@@ -106,9 +106,9 @@ theme_override_fonts/font = ExtResource("1_bn5u7")
 theme_override_font_sizes/font_size = 50
 text = "Level Select"
 
-[node name="Player Viewer" type="Node2D" parent="."]
+[node name="Player Viewer" type="Node2D" parent="." unique_id=1189047884]
 
-[node name="SubViewportContainer" type="SubViewportContainer" parent="Player Viewer"]
+[node name="SubViewportContainer" type="SubViewportContainer" parent="Player Viewer" unique_id=162472133]
 offset_left = 120.0
 offset_top = 71.0
 offset_right = 457.0
@@ -116,29 +116,29 @@ offset_bottom = 465.0
 mouse_filter = 2
 stretch = true
 
-[node name="SubViewport" type="SubViewport" parent="Player Viewer/SubViewportContainer"]
+[node name="SubViewport" type="SubViewport" parent="Player Viewer/SubViewportContainer" unique_id=1768287199]
 handle_input_locally = false
 size = Vector2i(337, 394)
 render_target_update_mode = 4
 
-[node name="Camera3D" type="Camera3D" parent="Player Viewer/SubViewportContainer/SubViewport"]
+[node name="Camera3D" type="Camera3D" parent="Player Viewer/SubViewportContainer/SubViewport" unique_id=1551026862]
 transform = Transform3D(-1, -2.26267e-08, 8.44439e-08, 0, 0.965926, 0.258819, -8.74228e-08, 0.258819, -0.965926, 0, 1.48605, -2.05984)
 
-[node name="Player" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D" instance=ExtResource("3_jodt1")]
+[node name="Player" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D" unique_id=1582431023 instance=ExtResource("3_jodt1")]
 transform = Transform3D(-1, -1.77636e-15, -8.74228e-08, -2.26267e-08, 0.965926, 0.258819, 8.44439e-08, 0.258819, -0.965926, -1.80077e-07, -0.107112, -2.1612)
 
-[node name="SkinC" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"]
+[node name="SkinC" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player" unique_id=1288440957]
 unique_name_in_owner = true
 mesh = SubResource("CapsuleMesh_njvu8")
 
-[node name="Shirt2" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"]
+[node name="Shirt2" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player" unique_id=449269131]
 unique_name_in_owner = true
 transform = Transform3D(1.01, 0, 0, -3.38813e-21, 0.35, 4.81482e-35, 0, 0, 1.01, 0, 0.095, 0)
 layers = 16
 cast_shadow = 0
 mesh = SubResource("CylinderMesh_e0us1")
 
-[node name="PantsC" type="CSGMesh3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player"]
+[node name="PantsC" type="CSGMesh3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player" unique_id=174966143]
 unique_name_in_owner = true
 transform = Transform3D(1.01, 0, 0, 0, 0.84, 0, 0, 0, 1.01, 0, -0.180421, 0)
 layers = 16
@@ -146,114 +146,114 @@ operation = 2
 mesh = SubResource("CapsuleMesh_qlo73")
 material = SubResource("StandardMaterial3D_xdwoa")
 
-[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player/PantsC"]
+[node name="CSGCylinder3D" type="CSGCylinder3D" parent="Player Viewer/SubViewportContainer/SubViewport/Camera3D/Player/PantsC" unique_id=971970314]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911767, 0)
 operation = 2
 radius = 0.565918
 
-[node name="Node3D" type="Node3D" parent="Player Viewer/SubViewportContainer/SubViewport"]
+[node name="Node3D" type="Node3D" parent="Player Viewer/SubViewportContainer/SubViewport" unique_id=625312727]
 
-[node name="FuncGodotMap" type="Node3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D"]
+[node name="FuncGodotMap" type="Node3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D" unique_id=632233003]
 transform = Transform3D(1.19249e-08, 0, -1, 0, 1, 0, 1, 0, 1.19249e-08, -20.145, -0.73, 0)
 script = ExtResource("4_8rn45")
 local_map_file = "uid://dvidp1a35rhsw"
 map_settings = ExtResource("5_77quw")
 metadata/_custom_type_script = "uid://cwu5cf7a0awcd"
 
-[node name="entity_0_worldspawn" type="StaticBody3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap"]
+[node name="entity_0_worldspawn" type="StaticBody3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap" unique_id=1301794128]
 collision_mask = 0
 
-[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_mesh_instance" type="MeshInstance3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap/entity_0_worldspawn" unique_id=1235249392]
 mesh = SubResource("ArrayMesh_8rn45")
 
-[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap/entity_0_worldspawn"]
+[node name="entity_0_brush_0_collision_shape" type="CollisionShape3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D/FuncGodotMap/entity_0_worldspawn" unique_id=1779394901]
 shape = SubResource("ConvexPolygonShape3D_77quw")
 
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D"]
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D" unique_id=269924972]
 transform = Transform3D(-0.866024, -0.433016, 0.250001, 0, 0.499998, 0.866026, -0.500003, 0.749999, -0.43301, -0.40863, 49.3627, 0.277023)
 light_color = Color(1, 1, 0.760784, 1)
 light_energy = 0.6
 shadow_enabled = true
 shadow_opacity = 0.65
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D"]
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Player Viewer/SubViewportContainer/SubViewport/Node3D" unique_id=1533811239]
 environment = SubResource("Environment_5cedn")
 
-[node name="Customization Buttons" type="VBoxContainer" parent="."]
+[node name="Customization Buttons" type="VBoxContainer" parent="." unique_id=726060617]
 layout_mode = 0
 offset_left = 568.0
 offset_top = 72.0
 offset_right = 934.0
 offset_bottom = 473.0
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Customization Buttons"]
+[node name="VBoxContainer" type="VBoxContainer" parent="Customization Buttons" unique_id=804725564]
 layout_mode = 2
 theme_override_constants/separation = 70
 
-[node name="Skin" type="HBoxContainer" parent="Customization Buttons/VBoxContainer"]
+[node name="Skin" type="HBoxContainer" parent="Customization Buttons/VBoxContainer" unique_id=892483940]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Skin"]
+[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Skin" unique_id=945374945]
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_bn5u7")
 theme_override_font_sizes/font_size = 60
 text = "Skin"
 
-[node name="SkinBack" type="Button" parent="Customization Buttons/VBoxContainer/Skin"]
+[node name="SkinBack" type="Button" parent="Customization Buttons/VBoxContainer/Skin" unique_id=1790363607]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "<"
 
-[node name="SkinNext" type="Button" parent="Customization Buttons/VBoxContainer/Skin"]
+[node name="SkinNext" type="Button" parent="Customization Buttons/VBoxContainer/Skin" unique_id=1275166309]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = ">"
 
-[node name="Shirt" type="HBoxContainer" parent="Customization Buttons/VBoxContainer"]
+[node name="Shirt" type="HBoxContainer" parent="Customization Buttons/VBoxContainer" unique_id=1899724719]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Shirt"]
+[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Shirt" unique_id=1773622155]
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_bn5u7")
 theme_override_font_sizes/font_size = 60
 text = "Shirt"
 
-[node name="ShirtBack" type="Button" parent="Customization Buttons/VBoxContainer/Shirt"]
+[node name="ShirtBack" type="Button" parent="Customization Buttons/VBoxContainer/Shirt" unique_id=967613635]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "<"
 
-[node name="ShirtNext" type="Button" parent="Customization Buttons/VBoxContainer/Shirt"]
+[node name="ShirtNext" type="Button" parent="Customization Buttons/VBoxContainer/Shirt" unique_id=1991792381]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = ">"
 
-[node name="Pants" type="HBoxContainer" parent="Customization Buttons/VBoxContainer"]
+[node name="Pants" type="HBoxContainer" parent="Customization Buttons/VBoxContainer" unique_id=2141289947]
 layout_mode = 2
 theme_override_constants/separation = 20
 
-[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Pants"]
+[node name="Label" type="Label" parent="Customization Buttons/VBoxContainer/Pants" unique_id=378750537]
 layout_mode = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("1_bn5u7")
 theme_override_font_sizes/font_size = 60
 text = "Pants"
 
-[node name="PantsBack" type="Button" parent="Customization Buttons/VBoxContainer/Pants"]
+[node name="PantsBack" type="Button" parent="Customization Buttons/VBoxContainer/Pants" unique_id=2113426618]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40
 text = "<"
 
-[node name="PantsNext" type="Button" parent="Customization Buttons/VBoxContainer/Pants"]
+[node name="PantsNext" type="Button" parent="Customization Buttons/VBoxContainer/Pants" unique_id=544788306]
 unique_name_in_owner = true
 layout_mode = 2
 theme_override_font_sizes/font_size = 40

@@ -42,6 +42,7 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	if play_type == 0:
 		if Global.scored == false:
+			velocity += get_gravity() * delta
 			move_AI(ball)
 			move_and_slide()
 	elif play_type == 1:
