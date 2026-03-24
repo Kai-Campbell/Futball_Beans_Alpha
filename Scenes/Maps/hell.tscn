@@ -29,7 +29,7 @@
 [ext_resource type="Texture2D" uid="uid://ctcx3r6pm6teu" path="res://Assets/Images/u-s-route-66-highway-shield-us-interstate-highway-system-traffic-sign-road-outline-cliparts.png" id="25_lbjhw"]
 [ext_resource type="Texture2D" uid="uid://bqou0cdnacira" path="res://Assets/Images/arrow.png" id="26_2l6nc"]
 [ext_resource type="PackedScene" uid="uid://c75b186w1oxr0" path="res://Scenes/Misc/CrowdSingleDevil.tscn" id="28_rp7mi"]
-[ext_resource type="PackedScene" uid="uid://2af8f4c47kvm" path="res://Scenes/Essentials/opposing_team.tscn" id="30_ty64u"]
+[ext_resource type="PackedScene" uid="uid://2af8f4c47kvm" path="res://Scenes/Essentials/AI.tscn" id="30_ty64u"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_spd6m"]
 sky_top_color = Color(0.552092, 0.431515, 1.92523e-07, 1)

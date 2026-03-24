@@ -11,7 +11,7 @@ extends CharacterBody3D
 enum STATE {Idle, Wait, Wander, Attack, Pass}
 var state : STATE = STATE.Idle
 
-var chase_distance = 20
+var chase_distance = 15
 
 var wander_timer : float = 0.2
 var wander_timer_count : float = 0.0

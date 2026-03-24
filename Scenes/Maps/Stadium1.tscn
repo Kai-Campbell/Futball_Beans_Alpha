@@ -10,7 +10,7 @@
 [ext_resource type="Material" uid="uid://hg21qqtyv1me" path="res://Trenchbroom/Textures/black.tres" id="7_o1xye"]
 [ext_resource type="Material" uid="uid://c0jpkkwlppnhp" path="res://Trenchbroom/Textures/256x256/Metal/Metal_18-256x256.tres" id="8_h6j26"]
 [ext_resource type="Material" uid="uid://c4cmx7mhnuw1m" path="res://Trenchbroom/Textures/256x256/Plaster/Plaster_16-256x256.tres" id="9_almk2"]
-[ext_resource type="PackedScene" uid="uid://2af8f4c47kvm" path="res://Scenes/Essentials/opposing_team.tscn" id="9_o1xye"]
+[ext_resource type="PackedScene" uid="uid://2af8f4c47kvm" path="res://Scenes/Essentials/AI.tscn" id="9_o1xye"]
 [ext_resource type="Material" uid="uid://vsx5g52vrnka" path="res://Trenchbroom/Textures/256x256/Plaster/Plaster_15-256x256.tres" id="10_es0v7"]
 [ext_resource type="PackedScene" uid="uid://bv7h4fios87pf" path="res://Scenes/Essentials/ball.tscn" id="11_ihj8v"]
 [ext_resource type="PackedScene" uid="uid://3vkky0gkhxqb" path="res://Scenes/Essentials/player.tscn" id="12_ikv7p"]

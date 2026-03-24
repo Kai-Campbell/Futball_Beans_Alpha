@@ -1,9 +1,9 @@
 [gd_scene format=3 uid="uid://2af8f4c47kvm"]
 
 [ext_resource type="Material" uid="uid://hkwdvumg5gsg" path="res://Trenchbroom/Textures/256x256/Metal/Metal_05-256x256.tres" id="1_f8vjj"]
-[ext_resource type="Script" uid="uid://b2l8v4ua7a2g5" path="res://Scripts/Essentials/opposing_team.gd" id="1_nphkm"]
+[ext_resource type="Script" uid="uid://b2l8v4ua7a2g5" path="res://Scripts/Essentials/AI_script.gd" id="1_nphkm"]
 [ext_resource type="Texture2D" uid="uid://dx5b0sb815gok" path="res://Assets/Player Customizations/Skins/Skin1.png" id="2_nphkm"]
-[ext_resource type="Script" uid="uid://c78m4tavwrco7" path="res://Scripts/Essentials/enemyFootShapeCase.gd" id="4_hbejr"]
+[ext_resource type="Script" uid="uid://c78m4tavwrco7" path="res://Scripts/Essentials/AI_FootShapeCase.gd" id="4_hbejr"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_xjp4x"]
 
@@ -28,7 +28,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nphkm"]
 
-[node name="OpposingTeam" type="CharacterBody3D" unique_id=1282831230 groups=["OpposingTeam"]]
+[node name="AI" type="CharacterBody3D" unique_id=1282831230 groups=["OpposingTeam"]]
 collision_layer = 33
 script = ExtResource("1_nphkm")
 

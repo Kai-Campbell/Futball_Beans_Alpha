@@ -26,7 +26,7 @@
 [ext_resource type="FontFile" uid="uid://ddycjadhuy16o" path="res://Fonts/5mal6Lampen.ttf" id="23_g1062"]
 [ext_resource type="Script" uid="uid://ducwsp2cp0oau" path="res://Scripts/GlobalScripts/HomeScore.gd" id="24_g1062"]
 [ext_resource type="Script" uid="uid://b57c7r6mm7ygs" path="res://Scripts/GlobalScripts/AwayScore.gd" id="25_bocnl"]
-[ext_resource type="PackedScene" uid="uid://2af8f4c47kvm" path="res://Scenes/Essentials/opposing_team.tscn" id="26_g1062"]
+[ext_resource type="PackedScene" uid="uid://2af8f4c47kvm" path="res://Scenes/Essentials/AI.tscn" id="26_g1062"]
 [ext_resource type="PackedScene" uid="uid://crncnmiyjs813" path="res://Scenes/Misc/CrowdCheerSmall.tscn" id="28_f2g4i"]
 [ext_resource type="PackedScene" uid="uid://dngtbcn6vfaev" path="res://Scenes/Misc/crowd_cheer_big.tscn" id="29_f2g4i"]
 

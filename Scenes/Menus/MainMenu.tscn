@@ -1,12 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://crube16ewxdcx"]
+[gd_scene format=3 uid="uid://crube16ewxdcx"]
 
 [ext_resource type="Script" uid="uid://d13g57ptx8m6y" path="res://Scripts/Menus/main_menu.gd" id="1_b42ut"]
 [ext_resource type="FontFile" uid="uid://of4ntiuaa00q" path="res://Fonts/Super Joyful.ttf" id="2_hqtmt"]
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i26rj"]
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i26rj"]
-bg_color = Color(0.633757, 0.633757, 0.633757, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjwba"]
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -23,8 +21,8 @@ corner_radius_bottom_left = 20
 shadow_size = 5
 shadow_offset = Vector2(4.635, 0)
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kjwba"]
-bg_color = Color(1, 1, 1, 1)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i26rj"]
+bg_color = Color(0.633757, 0.633757, 0.633757, 1)
 corner_radius_top_left = 20
 corner_radius_top_right = 20
 corner_radius_bottom_right = 20
@@ -32,7 +30,9 @@ corner_radius_bottom_left = 20
 shadow_size = 5
 shadow_offset = Vector2(4.635, 0)
 
-[node name="MainMenu" type="Control"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_i26rj"]
+
+[node name="MainMenu" type="Control" unique_id=1874234375]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -41,7 +41,7 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_b42ut")
 
-[node name="Panel" type="Panel" parent="."]
+[node name="Panel" type="Panel" parent="." unique_id=205449755]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -49,7 +49,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=2146155518]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -64,98 +64,98 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 36
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="Button" type="Button" parent="VBoxContainer" unique_id=1959516728]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hqtmt")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
 text = "Story Mode"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Button2" type="Button" parent="VBoxContainer" unique_id=1662873612]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hqtmt")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
 text = "Quick Game"
 
-[node name="Button3" type="Button" parent="VBoxContainer"]
+[node name="Button3" type="Button" parent="VBoxContainer" unique_id=1713717386]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hqtmt")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
 text = "Settings"
 
-[node name="Credits" type="Button" parent="VBoxContainer"]
+[node name="Credits" type="Button" parent="VBoxContainer" unique_id=111008159]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hqtmt")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
 text = "Credits
 "
 
-[node name="Button4" type="Button" parent="VBoxContainer"]
+[node name="Button4" type="Button" parent="VBoxContainer" unique_id=941329111]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/icon_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("2_hqtmt")
 theme_override_font_sizes/font_size = 45
-theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
-theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
 theme_override_styles/normal = SubResource("StyleBoxFlat_kjwba")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_eiy7p")
+theme_override_styles/hover = SubResource("StyleBoxFlat_i26rj")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_i26rj")
 text = "Exit"
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="." unique_id=1631994867]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -167,8 +167,7 @@ grow_horizontal = 2
 theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("2_hqtmt")
 theme_override_font_sizes/font_size = 100
-text = "Futbol Beans
-/Tackle League Soccer"
+text = "Tackle League Soccer"
 horizontal_alignment = 1
 vertical_alignment = 1
 
