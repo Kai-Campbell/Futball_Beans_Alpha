@@ -34,10 +34,10 @@ func _kick_towards_goal_AI(enemy, object):
 	var y = randi_range(-3, 3)
 	var x = randi_range(-30, 30) # 30 / 30 works too, originally used -9 / 9
 	var random_goal_pos
-	if get_parent().get_parent().is_in_group("OpposingTeam"):
+	if opposing_team_player.home == false:
 		random_goal_pos = Vector3(Global.home_goal_pos.x + (x), Global.home_goal_pos.y + (y), Global.home_goal_pos.z)
 		object.apply_impulse((random_goal_pos - enemy.position).normalized() * dribblestrengthAI)
-	elif get_parent().get_parent().is_in_group("PlayerTeam"):
+	elif opposing_team_player.home == true:
 		random_goal_pos = Vector3(Global.away_goal_pos.x + (x), Global.away_goal_pos.y + (y), Global.away_goal_pos.z)
 		object.apply_impulse((random_goal_pos - enemy.position).normalized() * dribblestrengthAI)
 
@@ -46,9 +46,9 @@ func _shoot_for_goal(enemy, object):
 	var y = randi_range(-3, 3)
 	var x = randi_range(-9, 9)
 	var random_goal_pos 
-	if get_parent().get_parent().is_in_group("OpposingTeam"):
+	if opposing_team_player.home == false:
 		random_goal_pos = Vector3(Global.home_goal_pos.x + (x), Global.home_goal_pos.y + (y), Global.home_goal_pos.z)
-	elif get_parent().get_parent().is_in_group("PlayerTeam"):
+	elif opposing_team_player.home == true:
 		random_goal_pos = Vector3(Global.away_goal_pos.x + (x), Global.away_goal_pos.y + (y), Global.away_goal_pos.z)
 	var distance_from_goal = abs(random_goal_pos.z) - abs(enemy.position.z)
 	if random_goal_pos.y > 2 and abs(distance_from_goal) > 25:

@@ -28,7 +28,7 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nphkm"]
 
-[node name="AI" type="CharacterBody3D" unique_id=1282831230 groups=["OpposingTeam"]]
+[node name="AI" type="CharacterBody3D" unique_id=1282831230]
 collision_layer = 33
 script = ExtResource("1_nphkm")
 

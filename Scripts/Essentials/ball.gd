@@ -33,7 +33,3 @@ func _shootball(player):
 func reset():
 	global_position = start
 	
-
-func _pass_to_enemy(enemy : Vector3):
-	pass
-	

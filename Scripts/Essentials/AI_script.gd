@@ -6,6 +6,8 @@ extends CharacterBody3D
 @export var ball_path : NodePath
 @export var player_path : NodePath
 @export var goal_path : NodePath
+@export var home : bool
+
 
 'This is used mostly for the defenders and midfielders'
 enum STATE {Idle, Wait, Wander, Attack, Pass}
@@ -28,7 +30,7 @@ var goal = null
 var in_range = false
 var target_reached
 var SPEED = 5
-var RUNSPEED = 8
+var RUNSPEED = 6
 var randomizer_number
 var ball_close = false
 var start_pos
@@ -38,6 +40,8 @@ func _ready():
 	ball = get_node(ball_path)
 	target_reached = false
 	start_pos = global_position
+	if home == true:
+		set_collision_layer_value(6 , false)
 
 func _physics_process(delta: float) -> void:
 	if play_type == 0:
@@ -82,9 +86,10 @@ func _on_navigation_agent_3d_target_reached() -> void:
 			else:
 				state = STATE.Idle
 
-func _on_enemy_shooting_area_body_entered(_body: Node3D) -> void:
-	print("in range")
+func _on_enemy_shooting_area_body_entered(body: Node3D) -> void:
+	print("here")
 	in_range = true
+
 
 func _on_enemy_shooting_area_body_exited(_body: Node3D) -> void:
 	print("gone")
@@ -96,7 +101,7 @@ func move_AI(path):
 	var next_path_location = navigation_agent_3d.get_next_path_position()
 	var new_velocity = (next_path_location - global_position).normalized() * SPEED
 			
-	velocity = velocity.move_toward(new_velocity, 0.25)
+	velocity = velocity.move_toward(new_velocity, 0.1)
 
 
 ##################################################################################3
