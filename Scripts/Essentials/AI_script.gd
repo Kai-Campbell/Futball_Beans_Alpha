@@ -56,6 +56,7 @@ func _ready():
 	teammates.erase(self)
 	#assert(not self in teammates)
 	$Feet/EnemyShapeCast.teammates = teammates
+	
 
 func _physics_process(delta: float) -> void:
 	if play_type == 0:

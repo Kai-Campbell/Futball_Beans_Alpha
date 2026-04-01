@@ -89,14 +89,12 @@ func _shoot_for_goal(enemy, object):
 	else:
 		object.apply_impulse((random_goal_pos - enemy.position).normalized() * shootingstrengthAI)
 
-
-
+'None of this below even works'
 func _on_enemy_players_body_entered(body: Node3D) -> void:
 	if body not in teammates and not opposing_team_player:
 		enemy_close = true
 		print("enemy is range")
-		
-
+	
 func _on_enemy_players_body_exited(body: Node3D) -> void:
 	if body not in teammates and not opposing_team_player:
 		enemy_close = false
