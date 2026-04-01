@@ -43,10 +43,14 @@ var target_reached
 var SPEED = 15
 var gravity = 20
 
+var shooting_high : bool = false
+var target_pos = null
+
 
 func _ready():
 	ball = get_node(ball_path)
 	target_reached = false
+	Global.kick_target.connect(jump)
 	if home == true:
 		Global.in_possession_home = false
 	else:
@@ -75,3 +79,8 @@ func _on_navigation_agent_3d_target_reached() -> void:
 		Global.in_possession_home = true
 	else:
 		Global.in_possession_away = true
+
+func jump(where):
+	shooting_high = true
+	target_pos = where
+	

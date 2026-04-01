@@ -8,6 +8,7 @@ extends CharacterBody3D
 @export var goal_path : NodePath
 @export var home : bool
 
+var teammates = []
 
 'This is used mostly for the defenders and midfielders'
 enum STATE {Idle, Wait, Wander, Attack, Pass}
@@ -20,6 +21,7 @@ var wander_timer_count : float = 0.0
 
 'this determines if the AI is more likely to attack, pass, or defend'
 '0 is attack, 1 is pass/playmaking, 2 is defend, 3 is goalie'
+## 0 is attack, 1 is pass/ playmaker (defunct), 2 is defender, 3 is goalie
 @export var play_type : int
 
 'Set these values when deciding if enemy AI will chase player or the ball'
@@ -42,6 +44,18 @@ func _ready():
 	start_pos = global_position
 	if home == true:
 		set_collision_layer_value(6 , false)
+
+	if is_in_group("PlayerTeam"):
+		teammates = get_tree().get_nodes_in_group("PlayerTeam")
+		teammates.append(get_tree().get_nodes_in_group("player"))
+		print(teammates.find(get_tree().get_nodes_in_group("player")))
+	if is_in_group("OpposingTeam"):
+		teammates = get_tree().get_nodes_in_group("OpposingTeam")
+		print(teammates)
+	#assert(self in teammates)
+	teammates.erase(self)
+	#assert(not self in teammates)
+	$Feet/EnemyShapeCast.teammates = teammates
 
 func _physics_process(delta: float) -> void:
 	if play_type == 0:
@@ -79,14 +93,13 @@ func _on_navigation_agent_3d_target_reached() -> void:
 		pass
 	target_reached = true
 	if target_reached:
-		print("here")
 		if play_type == 2:
 			if global_position.distance_to(ball.global_position) <= chase_distance:
 				state = STATE.Attack
 			else:
 				state = STATE.Idle
 
-func _on_enemy_shooting_area_body_entered(body: Node3D) -> void:
+func _on_enemy_shooting_area_body_entered(_body: Node3D) -> void:
 	print("here")
 	in_range = true
 

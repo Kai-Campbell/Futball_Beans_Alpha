@@ -108,4 +108,6 @@ stop_dribble={
 
 3d_render/layer_5="Player Clothes"
 3d_render/layer_6="EnemyAI Detection"
-3d_physics/layer_7="Goalie Block"
+3d_physics/layer_6="CheckArea"
+3d_physics/layer_7="OtherPlayers"
+3d_physics/layer_8="EnemyPlayers"

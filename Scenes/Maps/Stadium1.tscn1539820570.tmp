@@ -21,7 +21,6 @@
 [ext_resource type="PackedScene" uid="uid://crncnmiyjs813" path="res://Scenes/Misc/CrowdCheerSmall.tscn" id="17_k3gnm"]
 [ext_resource type="FontFile" uid="uid://ddycjadhuy16o" path="res://Fonts/5mal6Lampen.ttf" id="20_ihj8v"]
 [ext_resource type="Script" uid="uid://ducwsp2cp0oau" path="res://Scripts/GlobalScripts/HomeScore.gd" id="21_ikv7p"]
-[ext_resource type="AudioStream" uid="uid://dkputyvhvjsk2" path="res://Assets/SFX/CrowdLoop.mp3" id="21_rxhc5"]
 [ext_resource type="Script" uid="uid://b57c7r6mm7ygs" path="res://Scripts/GlobalScripts/AwayScore.gd" id="22_rxhc5"]
 [ext_resource type="Script" uid="uid://dusl25e1560vc" path="res://Scripts/GlobalScripts/Timer.gd" id="23_khro3"]
 [ext_resource type="PackedScene" uid="uid://b2o0uexr52c4v" path="res://Scenes/Essentials/Goalie.tscn" id="24_ikv7p"]
@@ -641,7 +640,7 @@ ring_sides = 9
 [node name="CSGSphere3D" type="CSGSphere3D" parent="Lines of Pitch/Goal_Lines2" unique_id=883876827]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.52647, -0.169931, -11.9082)
 
-[node name="Player" parent="." unique_id=1674203962 groups=["PlayerTeam"] instance=ExtResource("12_ikv7p")]
+[node name="Player" parent="." unique_id=1674203962 instance=ExtResource("12_ikv7p")]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.6376, 1.52042, 62.9825)
 
@@ -653,7 +652,7 @@ ball_path = NodePath("../../Ball")
 play_type = 3
 
 [node name="OpposingTeam" parent="EnemyAI" unique_id=336613782 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, 1.7400818, 27.073006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, 1.7869526, 27.073006)
 ball_path = NodePath("../../Ball")
 
 [node name="OpposingTeam3" parent="EnemyAI" unique_id=1202865766 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
@@ -667,7 +666,7 @@ ball_path = NodePath("../../Ball")
 play_type = 2
 
 [node name="AI" parent="EnemyAI" unique_id=1282831230 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.635666, 1.5991068, 53.91048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.492294, 1.5991068, 53.91048)
 ball_path = NodePath("../../Ball")
 play_type = 1
 
@@ -1083,26 +1082,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -31.00
 
 [node name="Crowd6" parent="Crowd Sprites/CrowdSpritesEnd2" unique_id=1280748808 instance=ExtResource("17_k3gnm")]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -28.1981, 14.9136, 79.9399)
-
-[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Crowd Sprites" unique_id=602270371]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.640972, 14.275007, -24.766346)
-stream = ExtResource("21_rxhc5")
-autoplay = true
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Crowd Sprites" unique_id=2080223691]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 40.640972, 14.275007, 146.93777)
-stream = ExtResource("21_rxhc5")
-autoplay = true
-
-[node name="AudioStreamPlayer3D3" type="AudioStreamPlayer3D" parent="Crowd Sprites" unique_id=762808774]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.07906, 14.275007, 60.357185)
-stream = ExtResource("21_rxhc5")
-autoplay = true
-
-[node name="AudioStreamPlayer3D4" type="AudioStreamPlayer3D" parent="Crowd Sprites" unique_id=218589705]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 109.006836, 14.275007, 60.357185)
-stream = ExtResource("21_rxhc5")
-autoplay = true
 
 [node name="Scoreboard1" type="Node3D" parent="." unique_id=745202923]
 transform = Transform3D(-4.37114e-08, 0.258819, -0.965926, 0, 0.965926, 0.258819, 1, 1.13133e-08, -4.2222e-08, -6.767, 11.299, 86.478)

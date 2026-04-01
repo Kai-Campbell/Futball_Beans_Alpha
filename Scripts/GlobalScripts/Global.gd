@@ -28,6 +28,9 @@ var scored : bool
 var in_possession_away : bool
 var in_possession_home : bool
 
+signal score
+signal kick_target
+
 ''' The below section handels the character customization '''
 
 func _ready() -> void:

@@ -33,3 +33,7 @@ func _shootball(player):
 func reset():
 	global_position = start
 	
+
+
+#H = -1/2(g)(t)^2+ Velcoity(t)
+# d = v(t)

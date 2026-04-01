@@ -28,6 +28,10 @@ albedo_color = Color(0, 0, 0, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_nphkm"]
 
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_yb1a0"]
+height = 0.53131104
+radius = 4.895508
+
 [node name="AI" type="CharacterBody3D" unique_id=1282831230]
 collision_layer = 33
 script = ExtResource("1_nphkm")
@@ -93,5 +97,16 @@ debug_enabled = true
 wait_time = 0.2
 one_shot = true
 
+[node name="PassingCollisions" type="Node3D" parent="." unique_id=100891175]
+
+[node name="EnemyPlayers" type="Area3D" parent="PassingCollisions" unique_id=966635931]
+collision_layer = 128
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="PassingCollisions/EnemyPlayers" unique_id=1433607382]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7343445, 0)
+shape = SubResource("CylinderShape3D_yb1a0")
+
 [connection signal="target_reached" from="Feet/NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="timeout" from="KickTimer" to="Feet/EnemyShapeCast" method="_on_kick_timer_timeout"]
+[connection signal="body_entered" from="PassingCollisions/EnemyPlayers" to="Feet/EnemyShapeCast" method="_on_enemy_players_body_entered"]
+[connection signal="body_exited" from="PassingCollisions/EnemyPlayers" to="Feet/EnemyShapeCast" method="_on_enemy_players_body_exited"]
