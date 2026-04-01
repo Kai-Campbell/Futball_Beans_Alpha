@@ -160,3 +160,22 @@ func get_random_location() -> Vector3:
 	var random_Z = randi_range(-10, 10)
 	var random_loc = Vector3(start_pos.x + (random_X), 0, start_pos.z + (random_Z))
 	return random_loc
+
+#################################################################################################
+'Area Functions for the ball detection and state changes'
+func _on_enemy_players_body_entered(body: Node3D) -> void:
+	if body == get_tree().get_first_node_in_group("Ball") and self.is_in_group("OpposingTeam"):
+		print("I got it")
+		Global.in_possession_away = true
+	if body == get_tree().get_first_node_in_group("Ball") and self.is_in_group("PlayerTeam"):
+		print("I got it")
+		Global.in_possession_home = true
+
+
+func _on_enemy_players_body_exited(body: Node3D) -> void:
+	if body == get_tree().get_first_node_in_group("Ball") and self.is_in_group("OpposingTeam"):
+		print("I lost it")
+		Global.in_possession_away = false
+	if body == get_tree().get_first_node_in_group("Ball") and self.is_in_group("PlayerTeam"):
+		print("I lost it")
+		Global.in_possession_home = false
