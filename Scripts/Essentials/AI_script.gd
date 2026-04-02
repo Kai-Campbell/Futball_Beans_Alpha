@@ -11,7 +11,7 @@ extends CharacterBody3D
 var teammates = []
 
 'This is used mostly for the defenders and midfielders'
-enum STATE {Idle, Wait, Wander, Attack, Pass}
+enum STATE {Idle, Wait, Wander, Attack, Pass, Push, Fall}
 var state : STATE = STATE.Idle
 
 var chase_distance = 15
@@ -81,6 +81,10 @@ func _physics_process(delta: float) -> void:
 					_attack(ball)
 				STATE.Pass:
 					_pass(ball)
+				STATE.Push:
+					pass
+				STATE.Fall:
+					pass
 					
 			move_and_slide()
 
@@ -150,11 +154,26 @@ func _attack(path):
 	velocity = direction * RUNSPEED
 	if global_position.distance_to(ball.global_position) > chase_distance:
 		state = STATE.Idle
+	'''
+	if Global.in_possession_away and self.is_in_group("OpposingTeam"):
+		state = STATE.Push
+	if Global.in_possession_home and self.is_in_group("PlayerTeam"):
+		state = STATE.Push
+	'''
+	
+func _fall():
+	pass
+
+func _push():
+	if Global.in_possession_away == false and self.is_in_group("OpposingTeam"):
+		state = STATE.Idle
+	if Global.in_possession_home == false and self.is_in_group("PlayerTeam"):
+		state = STATE.Idle
 
 
 func _pass(path):
 	pass
-	
+
 func get_random_location() -> Vector3:
 	var random_X = randi_range(-15, 15)
 	var random_Z = randi_range(-10, 10)

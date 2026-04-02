@@ -39,6 +39,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.743, 0.492, 15.635)
 
 [node name="CSGBox3D" type="CSGBox3D" parent="." unique_id=987810197]
 transform = Transform3D(1, 0, 0, 0, 1.0000001, 0, 0, 0, 1, -0.08404541, 1.0335139, 15.675432)
+use_collision = true
 size = Vector3(0.8319092, 0.061157227, 35.502777)
 
 [connection signal="body_entered" from="DetectBall(GoalArea)" to="DetectBall(GoalArea)" method="_on_body_entered"]
