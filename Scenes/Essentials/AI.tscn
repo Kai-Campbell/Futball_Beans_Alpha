@@ -106,6 +106,10 @@ collision_layer = 128
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.7343445, 0)
 shape = SubResource("CylinderShape3D_yb1a0")
 
+[node name="PushTimer" type="Timer" parent="." unique_id=994076709]
+wait_time = 4.0
+one_shot = true
+
 [connection signal="target_reached" from="Feet/NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
 [connection signal="timeout" from="KickTimer" to="Feet/EnemyShapeCast" method="_on_kick_timer_timeout"]
 [connection signal="body_entered" from="PassingCollisions/EnemyPlayers" to="." method="_on_enemy_players_body_entered"]

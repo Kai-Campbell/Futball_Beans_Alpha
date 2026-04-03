@@ -653,22 +653,26 @@ ball_path = NodePath("../../Ball")
 play_type = 3
 
 [node name="OpposingTeam" parent="EnemyAI" unique_id=336613782 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, 1.7400818, 27.073006)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.277, 1.5394258, 44.389935)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../HomeGoalCenter")
 
 [node name="OpposingTeam3" parent="EnemyAI" unique_id=1202865766 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.9466, 1.65067, 13.0581)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../HomeGoalCenter")
 play_type = 2
 
 [node name="OpposingTeam4" parent="EnemyAI" unique_id=808047441 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9001, 1.65067, 13.0581)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../HomeGoalCenter")
 play_type = 2
 
 [node name="AI" parent="EnemyAI" unique_id=1282831230 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.635666, 1.5991068, 53.91048)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../HomeGoalCenter")
 play_type = 1
 
 [node name="NavMap" type="NavigationRegion3D" parent="." unique_id=1027439116]
@@ -1340,20 +1344,23 @@ home = true
 play_type = 3
 
 [node name="AI" parent="Home AI" unique_id=521194683 groups=["PlayerTeam"] instance=ExtResource("9_o1xye")]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -1.9143677, 0.028364658, 24.025406)
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0.21786118, 0.028364658, 24.025398)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../AwayGoalCenter")
 home = true
 play_type = 2
 
 [node name="AI2" parent="Home AI" unique_id=1614971311 groups=["PlayerTeam"] instance=ExtResource("9_o1xye")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, -29.742962, 0.4764893, 10.997932)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../AwayGoalCenter")
 home = true
 play_type = 2
 
 [node name="AI3" parent="Home AI" unique_id=76567392 groups=["PlayerTeam"] instance=ExtResource("9_o1xye")]
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 28.03346, 0.39370155, 11.751663)
 ball_path = NodePath("../../Ball")
+attack_goal_path = NodePath("../../AwayGoalCenter")
 home = true
 play_type = 2
 

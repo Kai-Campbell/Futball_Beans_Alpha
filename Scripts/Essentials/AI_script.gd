@@ -5,10 +5,11 @@ extends CharacterBody3D
 
 @export var ball_path : NodePath
 @export var player_path : NodePath
-@export var goal_path : NodePath
+@export var attack_goal_path : NodePath
 @export var home : bool
 
 var teammates = []
+var enemies = []
 
 'This is used mostly for the defenders and midfielders'
 enum STATE {Idle, Wait, Wander, Attack, Pass, Push, Fall}
@@ -32,7 +33,8 @@ var goal = null
 var in_range = false
 var target_reached
 var SPEED = 5
-var RUNSPEED = 6
+var RUNSPEED = 6.5
+var ATTACKSPEED = 5.5
 var randomizer_number
 var ball_close = false
 var start_pos
@@ -40,6 +42,7 @@ var start_pos
 
 func _ready():
 	ball = get_node(ball_path)
+	goal = get_node(attack_goal_path)
 	target_reached = false
 	start_pos = global_position
 	if home == true:
@@ -48,10 +51,13 @@ func _ready():
 	if is_in_group("PlayerTeam"):
 		teammates = get_tree().get_nodes_in_group("PlayerTeam")
 		teammates.append(get_tree().get_nodes_in_group("player"))
-		print(teammates.find(get_tree().get_nodes_in_group("player")))
+		enemies = get_tree().get_nodes_in_group("OpposingTeam")
+		#print(teammates.find(get_tree().get_nodes_in_group("player")))
 	if is_in_group("OpposingTeam"):
 		teammates = get_tree().get_nodes_in_group("OpposingTeam")
-		print(teammates)
+		enemies = get_tree().get_nodes_in_group("PlayerTeam")
+		enemies.append(get_tree().get_nodes_in_group("player"))
+		#print(teammates)
 	#assert(self in teammates)
 	teammates.erase(self)
 	#assert(not self in teammates)
@@ -117,8 +123,7 @@ func _on_enemy_shooting_area_body_exited(_body: Node3D) -> void:
 func move_AI(path):
 	navigation_agent_3d.set_target_position(path.global_position)
 	var next_path_location = navigation_agent_3d.get_next_path_position()
-	var new_velocity = (next_path_location - global_position).normalized() * SPEED
-			
+	var new_velocity = (next_path_location - global_position).normalized() * RUNSPEED
 	velocity = velocity.move_toward(new_velocity, 0.1)
 
 
@@ -151,7 +156,7 @@ func _attack(path):
 	navigation_agent_3d.target_position = path.global_position
 	var next_pos = navigation_agent_3d.get_next_path_position()
 	var direction = (next_pos - current_position).normalized()
-	velocity = direction * RUNSPEED
+	velocity = direction * ATTACKSPEED
 	if global_position.distance_to(ball.global_position) > chase_distance:
 		state = STATE.Idle
 	'''
@@ -159,17 +164,24 @@ func _attack(path):
 		state = STATE.Push
 	if Global.in_possession_home and self.is_in_group("PlayerTeam"):
 		state = STATE.Push
-	'''
+
 	
 func _fall():
 	pass
 
-func _push():
+func _push(path):
+	var current_position = global_position
+	navigation_agent_3d.target_position = path.global_position
+	var next_pos = navigation_agent_3d.get_next_path_position()
+	var direction = (next_pos - current_position).normalized()
+	velocity = direction * SPEED
+	$PushTimer.start()
+	await $PushTimer.timeout
 	if Global.in_possession_away == false and self.is_in_group("OpposingTeam"):
 		state = STATE.Idle
 	if Global.in_possession_home == false and self.is_in_group("PlayerTeam"):
 		state = STATE.Idle
-
+'''
 
 func _pass(path):
 	pass
@@ -189,6 +201,9 @@ func _on_enemy_players_body_entered(body: Node3D) -> void:
 	if body == get_tree().get_first_node_in_group("Ball") and self.is_in_group("PlayerTeam"):
 		print("I got it")
 		Global.in_possession_home = true
+	if body in enemies:
+		print("HES TOUCHING ME")
+		enemy_shape_cast.enemy_close = true
 
 
 func _on_enemy_players_body_exited(body: Node3D) -> void:
@@ -198,3 +213,6 @@ func _on_enemy_players_body_exited(body: Node3D) -> void:
 	if body == get_tree().get_first_node_in_group("Ball") and self.is_in_group("PlayerTeam"):
 		print("I lost it")
 		Global.in_possession_home = false
+	if body in enemies:
+		print("Im safe")
+		enemy_shape_cast.enemy_close = false

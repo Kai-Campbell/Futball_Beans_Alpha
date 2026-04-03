@@ -13,7 +13,6 @@ var dribblestrengthAI = 12
 var shootingstrengthAI = 50
 var arcHeightAI = 6
 var arcHeightAI_longer = 10
-var passStrength = 35
 
 var enemy_close : bool = false
 
@@ -59,12 +58,15 @@ func _kick_towards_goal_AI(object):
 func _pass(object):
 	var best_pass 
 	for i in teammates:
-		if global_position.distance_to(i.global_position) <= 30:
+		if global_position.distance_to(i.global_position) <= 35:
 			best_pass = i.global_position
 			break
 	if best_pass == null:
 		kickCounter = 0  # I don't know why but this fixed the passing issue now it will pass to the player be careful
 		return
+	var passStrength = 20
+	if best_pass.x > 25 || best_pass.z > 25:
+		passStrength = 30
 	object.apply_impulse((best_pass - global_position).normalized() * passStrength)
 	kickCounter = 0
 
@@ -88,15 +90,3 @@ func _shoot_for_goal(enemy, object):
 		object.apply_impulse(enemy.basis.y * arcHeightAI)
 	else:
 		object.apply_impulse((random_goal_pos - enemy.position).normalized() * shootingstrengthAI)
-
-'None of this below even works'
-func _on_enemy_players_body_entered(body: Node3D) -> void:
-	if body not in teammates and not opposing_team_player:
-		enemy_close = true
-		print("enemy is range")
-	
-func _on_enemy_players_body_exited(body: Node3D) -> void:
-	if body not in teammates and not opposing_team_player:
-		enemy_close = false
-		print("enemy out of range")
-		
