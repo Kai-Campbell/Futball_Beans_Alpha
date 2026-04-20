@@ -670,7 +670,7 @@ attack_goal_path = NodePath("../../HomeGoalCenter")
 play_type = 2
 
 [node name="AI" parent="EnemyAI" unique_id=1282831230 groups=["OpposingTeam"] instance=ExtResource("9_o1xye")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.635666, 1.5991068, 53.91048)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 64.144516, 1.5991068, 66.68318)
 ball_path = NodePath("../../Ball")
 attack_goal_path = NodePath("../../HomeGoalCenter")
 play_type = 1

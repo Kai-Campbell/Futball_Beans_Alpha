@@ -46,6 +46,7 @@ var gravity = 20
 var shooting_high : bool = false
 var target_pos = null
 
+enum state {MOVE, JUMP}
 
 func _ready():
 	ball = get_node(ball_path)
@@ -58,20 +59,28 @@ func _ready():
 	
 func _physics_process(delta: float) -> void:
 	var ball_pos
+	ball_pos = Vector3(ball.global_position.x, ball.global_position.y, global_position.z)
 	if Global.scored == false:
-		#if global_position.distance_to(ball.global_position) <= 30:
-		ball_pos = Vector3(ball.global_position.x, ball.global_position.y, global_position.z)
-		#else:
-			#ball_pos = Vector3(ball.global_position.x, ball.global_position.y, global_position.z)
-		navigation_agent_3d.set_target_position(ball_pos)
-		var next_path_location = navigation_agent_3d.get_next_path_position()
-		var new_velocity = (next_path_location - global_position).normalized() * SPEED
-		
-		velocity = new_velocity
 		velocity += get_gravity() * delta
+		match state:
+			state.MOVE:
+				_move(ball_pos)
+			state.JUMP:
+				_jump(ball_pos)
 		
 		move_and_slide()
-		#velocity.move_toward(new_velocity, 0.25)
+		
+
+
+func _move(path):
+	navigation_agent_3d.set_target_position(path)
+	var next_path_location = navigation_agent_3d.get_next_path_position()
+	var new_velocity = (next_path_location - global_position).normalized() * SPEED
+	
+	velocity = new_velocity
+
+func _jump(path):
+	pass
 
 
 func _on_navigation_agent_3d_target_reached() -> void:
