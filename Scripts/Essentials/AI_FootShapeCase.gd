@@ -64,9 +64,9 @@ func _pass(object):
 	if best_pass == null:
 		kickCounter = 0  # I don't know why but this fixed the passing issue now it will pass to the player be careful
 		return
-	var passStrength = 20
+	var passStrength = 15
 	if best_pass.x > 25 || best_pass.z > 25:
-		passStrength = 30
+		passStrength = 20
 	object.apply_impulse((best_pass - global_position).normalized() * passStrength)
 	kickCounter = 0
 

@@ -5,7 +5,7 @@
 "mapversion" "220"
 "wad" ""
 "classname" "worldspawn"
-"_tb_mod" "Trenchbroom"
+"_tb_mod" "Trenchbroom;Assets"
 // brush 0
 {
 ( -64 64 16 ) ( -64 -64 16 ) ( -64 -64 -16 ) 256x256/Grass/Grass_24-256x256 [ 0 -1 0 0 ] [ 0 0 -1 0 ] 0 1 1

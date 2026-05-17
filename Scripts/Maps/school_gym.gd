@@ -16,3 +16,4 @@ func _ready() -> void:
 	Global.away_goal_pos = enemy_goal_center.position
 	time.start_countdown()
 	time2.start_countdown()
+	GlobalMusic.stop_music()

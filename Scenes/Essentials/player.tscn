@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" uid="uid://b6ilwbprhsc8" path="res://Scripts/Essentials/player.gd" id="1_4flbx"]
 [ext_resource type="Texture2D" uid="uid://dx5b0sb815gok" path="res://Assets/Player Customizations/Skins/Skin1.png" id="2_811lk"]
-[ext_resource type="Script" uid="uid://mfx2xtlys1bc" path="res://faceinteractraycast.gd" id="2_i3pqv"]
 [ext_resource type="Script" uid="uid://8yol6u01vndo" path="res://Scripts/Essentials/PlayerFootShapeCast.gd" id="4_hqtel"]
 [ext_resource type="Material" uid="uid://hkwdvumg5gsg" path="res://Trenchbroom/Textures/256x256/Metal/Metal_05-256x256.tres" id="4_vgqql"]
 [ext_resource type="Texture2D" uid="uid://bw4ptplg004tj" path="res://Assets/Player Customizations/Clothes/Shirts/RedStripes.png" id="6_07ght"]
 [ext_resource type="Texture2D" uid="uid://klee04q0kvl3" path="res://Assets/Player Customizations/Clothes/Pants/red.png" id="7_07ght"]
+[ext_resource type="Texture2D" uid="uid://c4bfiof5yysdv" path="res://Assets/Images/Crosshair (2).png" id="8_ptc0m"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_sh265"]
 
@@ -46,7 +46,6 @@ cull_mask = 1048559
 [node name="Face RayCast" type="RayCast3D" parent="Head/Camera3D" unique_id=1234370532]
 transform = Transform3D(2.47, 0, 0, 0, -1.07967e-07, -2.47, 0, 2.47, -1.07967e-07, 0, 0, 0)
 enabled = false
-script = ExtResource("2_i3pqv")
 
 [node name="ShapeCast3D" type="ShapeCast3D" parent="Head" unique_id=1569814665]
 transform = Transform3D(4, 0, 0, 0, -6.556708e-08, -1, 0, 1.5, -4.371139e-08, 0, -1.02601, 0.447545)
@@ -95,5 +94,30 @@ material = SubResource("StandardMaterial3D_fkybt")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.911767, 0)
 operation = 2
 radius = 0.565918
+
+[node name="UI" type="Control" parent="." unique_id=1849398890]
+process_mode = 4
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="UI" unique_id=561958879]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_ptc0m")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

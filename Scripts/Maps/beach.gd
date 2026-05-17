@@ -8,3 +8,4 @@ func _init() -> void:
 
 func _ready() -> void:
 	Global.ball_pos = ball.position
+	GlobalMusic.stop_music()

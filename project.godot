@@ -19,10 +19,14 @@ run/main_scene="uid://besmgk4th1ttr"
 config/features=PackedStringArray("4.6", "Forward Plus")
 config/icon="res://icon.svg"
 
+[audio]
+
+buses/default_bus_layout=""
+
 [autoload]
 
 Global="*res://Scripts/GlobalScripts/Global.gd"
-GlobalAudioStreamPlayer="*res://Scenes/Misc/audio_stream_player.tscn"
+GlobalMusic="*uid://x7271tsu2ctt"
 
 [display]
 

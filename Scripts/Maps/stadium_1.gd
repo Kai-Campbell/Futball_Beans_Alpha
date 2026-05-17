@@ -36,6 +36,7 @@ func _ready() -> void:
 	time.start_countdown()
 	time_2.start_countdown()
 	Global.score.connect(just_scored)
+	GlobalMusic.stop_music()
 
 func _on_away_goal_close_body_entered(body: Node3D) -> void:
 	if body.is_in_group("player"):

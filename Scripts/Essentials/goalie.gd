@@ -23,10 +23,11 @@ func _physics_process(delta: float) -> void:
 '''
 
 @onready var navigation_agent_3d: NavigationAgent3D = $NavigationAgent3D
+@onready var hands: Node3D = $Hands
 
 @export var ball_path : NodePath
 @export var player_path : NodePath
-
+@export var pass_speed : int = 20
 @export var home = false
 
 'this determines if the AI is more likely to attack, pass, or defend'
@@ -47,6 +48,9 @@ var shooting_high : bool = false
 var target_pos = null
 
 enum state {MOVE, JUMP}
+var State = state.MOVE
+
+
 
 func _ready():
 	ball = get_node(ball_path)
@@ -62,7 +66,7 @@ func _physics_process(delta: float) -> void:
 	ball_pos = Vector3(ball.global_position.x, ball.global_position.y, global_position.z)
 	if Global.scored == false:
 		velocity += get_gravity() * delta
-		match state:
+		match State:
 			state.MOVE:
 				_move(ball_pos)
 			state.JUMP:
@@ -92,4 +96,18 @@ func _on_navigation_agent_3d_target_reached() -> void:
 func jump(where):
 	shooting_high = true
 	target_pos = where
-	
+
+
+func _on_area_3d_body_entered(body: Node3D) -> void:
+	if body.is_in_group("Ball"):
+		$Area3D.monitoring = false
+		body.freeze = true
+		body.global_position = hands.global_position
+		$"Hold Timer".start()
+		await $"Hold Timer".timeout
+		body.freeze = false
+		if home:   #this should be changed to passing to teammates but works now very good
+			body.apply_central_impulse((Global.away_goal_pos - global_position).normalized() * pass_speed)
+		else:
+			body.apply_central_impulse((Global.home_goal_pos - global_position).normalized() * pass_speed)
+		$Area3D.monitoring = true

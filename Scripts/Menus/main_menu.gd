@@ -2,6 +2,9 @@ extends Control
 
 # Buttons of the menu
 
+func _ready() -> void:
+	GlobalMusic.play_menu_music()
+
 func _on_StoryMode_pressed() -> void:
 	print("Coming Soon")
 

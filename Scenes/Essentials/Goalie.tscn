@@ -1,38 +1,41 @@
-[gd_scene load_steps=6 format=3 uid="uid://b2o0uexr52c4v"]
+[gd_scene format=3 uid="uid://b2o0uexr52c4v"]
 
 [ext_resource type="Script" uid="uid://ci8k6rlqvbtn7" path="res://Scripts/Essentials/goalie.gd" id="1_1lxoo"]
-[ext_resource type="Script" uid="uid://b4321r5fregid" path="res://Scripts/Essentials/Goalie ShapeCast.gd" id="2_1lxoo"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_1lxoo"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_p6ft6"]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_cudsq"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_cudsq"]
+size = Vector3(1.0147705, 1.8089294, 1.2876587)
 
-[node name="Goalie" type="CharacterBody3D"]
+[node name="Goalie" type="CharacterBody3D" unique_id=1424851387]
 collision_layer = 71
 collision_mask = 71
 script = ExtResource("1_1lxoo")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=569785991]
 layers = 65
 mesh = SubResource("CapsuleMesh_1lxoo")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." unique_id=192607976]
 shape = SubResource("CapsuleShape3D_p6ft6")
 
-[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="." unique_id=76124035]
 path_postprocessing = 1
 debug_enabled = true
 
-[node name="ShapeCast3D" type="ShapeCast3D" parent="."]
-transform = Transform3D(1.3, 0, 0, 0, 1.8, 0, 0, 0, 1, 0, 0, 0.466573)
-shape = SubResource("SphereShape3D_cudsq")
-target_position = Vector3(0, 0, 0)
-collision_mask = 4
-script = ExtResource("2_1lxoo")
+[node name="Hands" type="Node3D" parent="." unique_id=1409147010]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138043, 0.9229865)
 
-[node name="Hands" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.138043, 0.982217)
+[node name="Area3D" type="Area3D" parent="." unique_id=1872390266]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=21712749]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.023864746, 0.18565369, 0.14382935)
+shape = SubResource("BoxShape3D_cudsq")
+
+[node name="Hold Timer" type="Timer" parent="." unique_id=643373719]
+one_shot = true
 
 [connection signal="target_reached" from="NavigationAgent3D" to="." method="_on_navigation_agent_3d_target_reached"]
+[connection signal="body_entered" from="Area3D" to="." method="_on_area_3d_body_entered"]
