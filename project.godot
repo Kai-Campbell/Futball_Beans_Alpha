@@ -115,3 +115,8 @@ stop_dribble={
 3d_physics/layer_6="CheckArea"
 3d_physics/layer_7="OtherPlayers"
 3d_physics/layer_8="EnemyPlayers"
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
